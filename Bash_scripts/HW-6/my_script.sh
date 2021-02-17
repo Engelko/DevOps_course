@@ -40,4 +40,8 @@ case $NUM in
 		echo "$TIME FIND -d && -f DELETE_ME"
 		FIND_DELME
 		;;
+	*)
+		echo -e "\033[31mСharacter is not correct"
+		tput setaf 7
+		;;
 esac
