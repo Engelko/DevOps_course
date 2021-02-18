@@ -1,3 +1,4 @@
+#!/bin/bash
 function DIR_OLDER {
 	for finddir in $(find $HOME -mindepth 1 -maxdepth 1 -type d -ctime +10 | xargs ls -ld |  awk '{if ($1>0) print $1, $6, $7, $8, $9}' )
 	do
