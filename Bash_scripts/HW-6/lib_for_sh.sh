@@ -7,6 +7,7 @@ function DIR_OLDER {
 	tput setaf 7
 	LOG "DIR_OLDER"
 }
+
 function FILES_OLDER {
 	for findfile in $(find $HOME -type f -ctime +10 | xargs ls -la |  awk '{print $1, $6, $7, $8, $9}' )
 	do
@@ -15,6 +16,7 @@ function FILES_OLDER {
 	tput setaf 7
 	LOG "FILES_OLDER"
 }
+
 function SYS_INFO {
 	PID=$(echo "Total PIDS: `top -bn1 | grep Tasks | awk '{printf $2}'`")
 	MEMORY=$(echo "Total MEMORY usage: `free -m | awk 'NR==2{printf "%s/%s", $3,$2 }'` MB")
@@ -27,6 +29,7 @@ function SYS_INFO {
 	tput setaf 7
 	LOG "SYS_INFO"
 }
+
 function ADD_HOSTS {
 if ! sudo grep -qxF '192.168.3.1 myapp.com' $ETC_HOSTS
 	then
@@ -38,6 +41,7 @@ fi
 tput setaf 7
 LOG "ADD_HOSTS"
 }
+
 function CHANGE_IP {
 	read -p "Change ip add? 1=yes or 2=no: " change
 if (($change==1))
@@ -50,6 +54,7 @@ else
 fi
 LOG "CHANGE_IP"
 }
+
 function FIND_DELME {
 	DEL_FILE_PATH=DELETE_ME
 while [ ! -d  $DEL_FILE_PATH ] && [ ! -f  $DEL_FILE_PATH ]
@@ -60,6 +65,7 @@ done
 	$(date > ~/temp) ; echo "fin"
 	LOG "FIND_DELETE_ME"
 }
+
 function LOG {
 		action=$1
         if [ $# -eq 1 ]
