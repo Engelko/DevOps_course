@@ -1,0 +1,10 @@
+[Unit]
+Description=System Monitoring
+After=local-fs.target systemd-sysctl.service systemd-modules-load.service
+
+[Service]
+Type=forking
+ExecStart=/home/sewd/sysdscript.sh
+
+[Install]
+WantedBy=multi-user.target
