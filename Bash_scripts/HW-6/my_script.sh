@@ -2,17 +2,17 @@
 . ./variables.sh
 . ./lib_for_sh.sh
 
-echo "Please touch number:
-1)Show directory older than 10 days
-2)Show files older than 10 days
-3)Show system info
-4)Add host in hosts files
-5)Change ip in hosts files
-6)Find DELETE_ME "
-
-read NUM
-
-case $NUM in 
+#===for interactive=======
+#echo "Please touch number:
+#1)Show directory older than 10 days
+#2)Show files older than 10 days
+#3)Show system info
+#4)Add host in hosts files
+#5)Change ip in hosts files
+#6)Find DELETE_ME "
+#read NUM
+#========================
+case $1 in 
 	1)	
 		echo "$TIME DIRECTORIES OLDER THAN 10 DAYS"
 		DIR_OLDER
