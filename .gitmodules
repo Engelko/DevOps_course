@@ -1,3 +1,4 @@
 [submodule "Bash_scripts/HW11/kinto"]
 	path = Bash_scripts/HW11/kinto
 	url = https://github.com/rbreaves/kinto
+	branch = kinto
