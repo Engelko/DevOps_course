@@ -5,12 +5,13 @@
     {
       "Sid": "Stmt1537365816157",
       "Action": [
-        "s3:CreateBucket"
+        "s3:DeleteBucket"
       ],
       "Effect": "Deny",
       "Resource": [
         "arn:aws:s3:::test1",
         "arn:aws:s3:::backup-test*"
+        "arn:aws:s3:::hw12-bucket" 
       ],
       "Principal": "*"
     }
