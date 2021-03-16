@@ -1,5 +1,6 @@
 FileA
-➜  ~ cat ~/Documents/test-hw12.json
+cat ~/Documents/test-hw12.json
+
 {
   "Id": "Policy1537365823345",
   "Version": "2012-10-17",
@@ -18,7 +19,7 @@ FileA
     }
   ]
 }
-➜  ~
+
 Tasks:
 1. Bash. Replace  "s3:DeleteBucket" with "s3:CreateBucket" in the fileA
 2. Bash. Add new line "arn:aws:s3:::hw12-bucket"
