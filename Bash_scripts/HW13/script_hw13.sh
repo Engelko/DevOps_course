@@ -54,3 +54,4 @@ elif  [[ "$NUM_C" -gt "$NUM_A" ]] && [[ "$NUM_C" -gt "$NUM_B" ]] && [[ "$NUM_A" 
 elif  [[ "$NUM_C" -gt "$NUM_A" ]] && [[ "$NUM_C" -gt "$NUM_B" ]] && [[ "$NUM_B" -lt "$NUM_A" ]]; then
         echo "C is greater than B and A, A greater than B";
 fi
+
