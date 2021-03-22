@@ -20,3 +20,17 @@ Read docker docs(links are in slides)
 4.	Run nginx container from nginx image.
   a.	Map 8081 port to 80 port of nginx container. Check it
   b.	Do not use a particular port and get any random port mapped to 80 port of your nginx container.
+
+
+
+![hw14p1](https://github.com/Engelko/DevOps_course/blob/Engelko-HW14/Bash_scripts/HW14/HW14p1.png)
+![hw14p1_2](https://github.com/Engelko/DevOps_course/blob/Engelko-HW14/Bash_scripts/HW14/HW14p1_2.png)
+![hw14p2](https://github.com/Engelko/DevOps_course/blob/Engelko-HW14/Bash_scripts/HW14/HW14p2.png)
+![hw14p2_2](https://github.com/Engelko/DevOps_course/blob/Engelko-HW14/Bash_scripts/HW14/HW14p2_2.png)
+![hw14p2_3](https://github.com/Engelko/DevOps_course/blob/Engelko-HW14/Bash_scripts/HW14/HW14p2_3.png)
+![hw14p2_4](https://github.com/Engelko/DevOps_course/blob/Engelko-HW14/Bash_scripts/HW14/hw14p2_4.png)
+![hw14p3](https://github.com/Engelko/DevOps_course/blob/Engelko-HW14/Bash_scripts/HW14/hw14p3.png)
+![hw14p3_2](https://github.com/Engelko/DevOps_course/blob/Engelko-HW14/Bash_scripts/HW14/hw14p3_2.png)
+![hw14p3_3](https://github.com/Engelko/DevOps_course/blob/Engelko-HW14/Bash_scripts/HW14/hw14p3_3.png)
+![hw14p4](https://github.com/Engelko/DevOps_course/blob/Engelko-HW14/Bash_scripts/HW14/hw14p4.png)
+![hw14p4_2](https://github.com/Engelko/DevOps_course/blob/Engelko-HW14/Bash_scripts/HW14/hw14p4_2.png)
