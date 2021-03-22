@@ -1,20 +1,7 @@
-#!/bin/bash
-        
-declare -i one=1
-declare -i two=2
-declare -i three=3
-declare -i four=4
-declare -i five=5
-	
-	
-read -p "Please enter a number A	" A       
-read -p "Please enter a number B	" B    
-read -p "Please enter a number C	" C
+#!/bin/bash 
+set -e
 
-NUM_A=${A,,}
-NUM_B=${B,,}
-NUM_C=${C,,}
-
+function num_compare {
 if [[ "$NUM_A" -eq "$NUM_B" ]] && [[ "$NUM_A" -eq "$NUM_C" ]]; then
         echo "A equal B equal C";
 
@@ -54,4 +41,47 @@ elif  [[ "$NUM_C" -gt "$NUM_A" ]] && [[ "$NUM_C" -gt "$NUM_B" ]] && [[ "$NUM_A" 
 elif  [[ "$NUM_C" -gt "$NUM_A" ]] && [[ "$NUM_C" -gt "$NUM_B" ]] && [[ "$NUM_B" -lt "$NUM_A" ]]; then
         echo "C is greater than B and A, A greater than B";
 fi
+}  
+
+declare -i one=1
+declare -i two=2
+declare -i three=3
+declare -i four=4
+declare -i five=5
+
+read -p "Please enter a number A	" A       
+read -p "Please enter a number B	" B    
+read -p "Please enter a number C	" C
+
+
+NUM_A=${A,,}
+NUM_B=${B,,}
+NUM_C=${C,,}
+
+array=("one" "two" "three" "four" "five")
+
+for i in "${array[@]}"
+do
+    if [[ "$i" -eq "$NUM_A" ]]; then
+		for i in "${array[@]}"
+		do
+			if [[ "$i" -eq "$NUM_B" ]] ; then
+				for i in "${array[@]}"
+				do
+					if [[ "$i" -eq "$NUM_C" ]] ; then
+						UP=1
+				
+					fi
+				done
+			fi
+		done
+    fi
+done
+
+if [[ $UP -eq 1 ]] ; then
+        num_compare
+else
+        echo "enter a number from 1 to 5"
+fi
+
 
