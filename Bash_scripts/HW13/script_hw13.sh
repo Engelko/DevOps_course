@@ -60,17 +60,13 @@ NUM_C=${C,,}
 
 array=("one" "two" "three" "four" "five")
 
-for i in "${array[@]}"
-do
-    if [[ "$i" -eq "$NUM_A" ]]; then
-		for i in "${array[@]}"
-		do
+for i in "${array[@]}" do
+	if [[ "$i" -eq "$NUM_A" ]]; then
+		for i in "${array[@]}" do
 			if [[ "$i" -eq "$NUM_B" ]] ; then
-				for i in "${array[@]}"
-				do
+				for i in "${array[@]}" do
 					if [[ "$i" -eq "$NUM_C" ]] ; then
 						UP=1
-				
 					fi
 				done
 			fi
@@ -79,9 +75,7 @@ do
 done
 
 if [[ $UP -eq 1 ]] ; then
-        num_compare
+	num_compare
 else
-        echo "enter a number from 1 to 5"
+	echo "enter a number from 1 to 5"
 fi
-
-
