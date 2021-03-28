@@ -1,7 +1,13 @@
 #!/bin/bash
-NUM_A=$1
-NUM_B=$2
-NUM_C=$3
+
+	echo "Please enter a number A "
+read NUM_A
+
+        echo "Please enter a number B "
+read NUM_B
+
+        echo "Please enter a number C "
+read NUM_C
 
 if (($NUM_A == $NUM_B)) && (($NUM_A == $NUM_C)); then
         echo "A equal B equal C";
