@@ -19,3 +19,4 @@ b.	One of one two three
 Print an error if even one of input variable is out of defined range. Error should contain which variable is wrong.
 Do this task in two ways
 
+![hw16p2](https://github.com/Engelko/DevOps_course/blob/HW16/Bash_scripts/HW16/hw16p2.png)
