@@ -8,3 +8,4 @@ Dockerfile syntax:
 ![hw15p1](https://github.com/Engelko/DevOps_course/blob/HW15/Bash_scripts/HW15/HW15p1.png)
 ![hw15p2](https://github.com/Engelko/DevOps_course/blob/HW15/Bash_scripts/HW15/hw15p2.png)
 ![hw15p3](https://github.com/Engelko/DevOps_course/blob/HW15/Bash_scripts/HW15/hw15p3.png)
+![hw15p3_change](https://github.com/Engelko/DevOps_course/blob/HW15/Bash_scripts/HW15/hw15p3_change.png)
