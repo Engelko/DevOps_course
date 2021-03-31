@@ -28,3 +28,4 @@ Something like that: docker run --rm myimage 1 1 1 OUTPUT: A equal B and equal C
 ![hw16p2](https://github.com/Engelko/DevOps_course/blob/HW16/Bash_scripts/HW16/hw16p2.png)
 ![hw16p3_1](https://github.com/Engelko/DevOps_course/blob/HW16/Bash_scripts/HW16/hw16p3_1.png)
 ![hw16p3_1](https://github.com/Engelko/DevOps_course/blob/HW16/Bash_scripts/HW16/hw16p3_2.png)
+![hw16p4_1](https://github.com/Engelko/DevOps_course/blob/HW16/Bash_scripts/HW16/hw16p4_1.png)
