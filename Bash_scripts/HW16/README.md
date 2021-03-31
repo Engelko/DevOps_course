@@ -1,4 +1,4 @@
-  
+
   Network:
 1.	Create 2 new bridge networks: hw16_1 and hw16_2
 2.	Run 2 pods(pod_hw1 and pod_hw2) in hw16_1  and check that ping works
