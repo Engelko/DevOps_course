@@ -23,3 +23,5 @@ https://docs.docker.com/engine/reference/run/
 ![hw17t5](https://github.com/Engelko/DevOps_course/blob/HW17/Bash_scripts/HW17/hw17t5.png)
 ![hw17t6p1](https://github.com/Engelko/DevOps_course/blob/HW17/Bash_scripts/HW17/hw17t6p1.png)
 ![hw17t6p2](https://github.com/Engelko/DevOps_course/blob/HW17/Bash_scripts/HW17/hw17t6p2.png)
+![hw17t7](https://github.com/Engelko/DevOps_course/blob/HW17/Bash_scripts/HW17/hw17t7.png)
+![hw17t8](https://github.com/Engelko/DevOps_course/blob/HW17/Bash_scripts/HW17/hw17t8.png)
