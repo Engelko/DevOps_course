@@ -11,7 +11,7 @@
 
 
 
-
+![hw17t0](https://github.com/Engelko/DevOps_course/blob/HW17/Bash_scripts/HW17/hw17t0.png)
 ![hw17t1](https://github.com/Engelko/DevOps_course/blob/HW17/Bash_scripts/HW17/hw17t1.png)
 ![hw17t2a](https://github.com/Engelko/DevOps_course/blob/HW17/Bash_scripts/HW17/hw17t2a.png)
 ![hw17t2b](https://github.com/Engelko/DevOps_course/blob/HW17/Bash_scripts/HW17/hw17t2b.png)
