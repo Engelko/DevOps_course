@@ -1,12 +1,17 @@
 1. Read about YAML and JSON format
+
 https://www.w3schools.com/whatis/whatis_json.asp
+
 https://www.infoworld.com/article/3222851/what-is-json-a-better-format-for-data-exchange.html
+
 https://blog.stackpath.com/yaml/
+
 https://www.geeksforgeeks.org/what-is-the-difference-between-yaml-and-json/
 
 2. How to get docker runtime resource metrics?
 
-3. Create multi stage build https://docs.docker.com/develop/develop-images/multistage-build/ :
+3. Create multi stage build 
+https://docs.docker.com/develop/develop-images/multistage-build/ :
 Create docker file:
 	1. Create file ubuntuone from UBUNTU image
 	2. As a second image use Alpine. Put ubuntuone file from previous stage to / of your new image. Container created from this image should print contact of the ubuntuone file
