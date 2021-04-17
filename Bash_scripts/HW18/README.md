@@ -33,11 +33,10 @@ ping, curl, tcpdump, traceroute, nc, vim, mysql client, python 3.9, golang lates
 Optional:
 Create docker-compose file with 2 container with 2 separate custom networks. Both custom networks should be declared at the same docker file.
 
-![hw18t2](https://github.com/Engelko/DevOps_course/blob/HW18/Bash_scripts/HW18/hw18t2.png)
-![hw18t3](https://github.com/Engelko/DevOps_course/blob/HW18/Bash_scripts/HW18/hw18t3.png)
-![hw18t4p1](https://github.com/Engelko/DevOps_course/blob/HW18/Bash_scripts/HW18/hw18t4p1.png)
-![hw18t4p2](https://github.com/Engelko/DevOps_course/blob/HW18/Bash_scripts/HW18/hw18t4p2.png)
-![hw18t4p3](https://github.com/Engelko/DevOps_course/blob/HW18/Bash_scripts/HW18/hw18t4p3.png)
-![hw18t4p4p5](https://github.com/Engelko/DevOps_course/blob/HW18/Bash_scripts/HW18/hw18t4p4p5.png)
-![hw18t4p6](https://github.com/Engelko/DevOps_course/blob/HW18/Bash_scripts/HW18/hw18t4p6.png)
-
+![hw18t2](https://github.com/Engelko/DevOps_course/blob/main/Bash_scripts/HW18/hw18t2.png)
+![hw18t3](https://github.com/Engelko/DevOps_course/blob/main/Bash_scripts/HW18/hw18t3.png)
+![hw18t4p1](https://github.com/Engelko/DevOps_course/blob/main/Bash_scripts/HW18/hw18t4p1.png)
+![hw18t4p2](https://github.com/Engelko/DevOps_course/blob/main/Bash_scripts/HW18/hw18t4p2.png)
+![hw18t4p3](https://github.com/Engelko/DevOps_course/blob/main/Bash_scripts/HW18/hw18t4p3.png)
+![hw18t4p4p5](https://github.com/Engelko/DevOps_course/blob/main/Bash_scripts/HW18/hw18t4p4p5.png)
+![hw18t4p6](https://github.com/Engelko/DevOps_course/blob/main/Bash_scripts/HW18/hw18t4p6.png)
