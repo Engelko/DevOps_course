@@ -11,17 +11,17 @@
 
 
 
-![hw17t0](https://github.com/Engelko/DevOps_course/blob/HW17/Bash_scripts/HW17/hw17t0.png)
-![hw17t1](https://github.com/Engelko/DevOps_course/blob/HW17/Bash_scripts/HW17/hw17t1.png)
-![hw17t2a](https://github.com/Engelko/DevOps_course/blob/HW17/Bash_scripts/HW17/hw17t2a.png)
-![hw17t2b](https://github.com/Engelko/DevOps_course/blob/HW17/Bash_scripts/HW17/hw17t2b.png)
+![hw17t0](https://github.com/Engelko/DevOps_course/blob/main/Bash_scripts/HW17/hw17t0.png)
+![hw17t1](https://github.com/Engelko/DevOps_course/blob/main/Bash_scripts/HW17/hw17t1.png)
+![hw17t2a](https://github.com/Engelko/DevOps_course/blob/main/Bash_scripts/HW17/hw17t2a.png)
+![hw17t2b](https://github.com/Engelko/DevOps_course/blob/main/Bash_scripts/HW17/hw17t2b.png)
 
 https://docs.docker.com/engine/reference/run/
 
-![hw17t4p1](https://github.com/Engelko/DevOps_course/blob/HW17/Bash_scripts/HW17/hw17t4p1.png)
-![hw17t4p2](https://github.com/Engelko/DevOps_course/blob/HW17/Bash_scripts/HW17/hw17t4p2.png)
-![hw17t5](https://github.com/Engelko/DevOps_course/blob/HW17/Bash_scripts/HW17/hw17t5.png)
-![hw17t6p1](https://github.com/Engelko/DevOps_course/blob/HW17/Bash_scripts/HW17/hw17t6p1.png)
-![hw17t6p2](https://github.com/Engelko/DevOps_course/blob/HW17/Bash_scripts/HW17/hw17t6p2.png)
-![hw17t7](https://github.com/Engelko/DevOps_course/blob/HW17/Bash_scripts/HW17/hw17t7.png)
-![hw17t8](https://github.com/Engelko/DevOps_course/blob/HW17/Bash_scripts/HW17/hw17t8.png)
+![hw17t4p1](https://github.com/Engelko/DevOps_course/blob/main/Bash_scripts/HW17/hw17t4p1.png)
+![hw17t4p2](https://github.com/Engelko/DevOps_course/blob/main/Bash_scripts/HW17/hw17t4p2.png)
+![hw17t5](https://github.com/Engelko/DevOps_course/blob/main/Bash_scripts/HW17/hw17t5.png)
+![hw17t6p1](https://github.com/Engelko/DevOps_course/blob/main/Bash_scripts/HW17/hw17t6p1.png)
+![hw17t6p2](https://github.com/Engelko/DevOps_course/blob/main/Bash_scripts/HW17/hw17t6p2.png)
+![hw17t7](https://github.com/Engelko/DevOps_course/blob/main/Bash_scripts/HW17/hw17t7.png)
+![hw17t8](https://github.com/Engelko/DevOps_course/blob/main/Bash_scripts/HW17/hw17t8.png)
