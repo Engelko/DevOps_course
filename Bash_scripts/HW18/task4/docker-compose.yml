@@ -1,0 +1,20 @@
+version: "3.9"
+services:
+  node:
+    build: .
+    deploy:
+        resources:
+            limits:
+              cpus: 0.50
+              memory: 512M
+    command: /bin/sh -c "go version && python3 --version"
+    dns: 8.8.8.8
+  node2:
+    image: "comp:${IMAGE_TAG}"
+    deploy:
+        resources:
+            limits:
+              cpus: 0.50
+              memory: 512M
+    command: /bin/sh -c "go version && python3 --version"
+    dns: 8.8.8.8
