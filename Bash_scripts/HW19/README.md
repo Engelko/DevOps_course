@@ -11,3 +11,10 @@ Group1 Group2 Group3
 
 Optional:
 Use docker to run ansible
+
+
+![hw19t1](https://github.com/Engelko/DevOps_course/blob/HW19/Bash_scripts/HW19/hw19t1.png)
+![hw19t2](https://github.com/Engelko/DevOps_course/blob/HW19/Bash_scripts/HW19/hw19t2.png)
+![hw19t3t4](https://github.com/Engelko/DevOps_course/blob/HW19/Bash_scripts/HW19/hw19t3t4.png)
+![hw19t5](https://github.com/Engelko/DevOps_course/blob/HW19/Bash_scripts/HW19/hw19t5.png)
+![hw19t6](https://github.com/Engelko/DevOps_course/blob/HW19/Bash_scripts/HW19/hw19t6.png)
