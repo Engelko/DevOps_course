@@ -1,0 +1,11 @@
+- name: "Install git and pyhton3"
+  ansible.builtin.package:
+   name: "{{ item }}"
+   state: latest
+   update_cache: yes
+  loop:
+   - git
+   - python3
+   
+  become: true
+  when: "'linux' in group_names"

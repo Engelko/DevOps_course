@@ -1,0 +1,7 @@
+- name: "Template a file to /tmp/HW20_FILE_INFO"
+  ansible.builtin.template:
+    src: /home/engelko/DevOps_course/Bash_scripts/HW20/roles/hw202/templates/main.j2
+    dest: /tmp/HW20_FILE_INFO
+    owner: hw20
+    mode: '0644'
+  become: true

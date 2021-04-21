@@ -1,2 +1,3 @@
 #Ubuntu vars
 group_hw20: ZONE_1
+group_sudo: sudo,docker
