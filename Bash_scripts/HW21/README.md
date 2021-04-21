@@ -15,3 +15,4 @@ Create logrotate(standart linux service) for task 3 logs. Period and rotate shou
 ![hw21t2p3](https://github.com/Engelko/DevOps_course/blob/HW21/Bash_scripts/HW21/hw21t2p3.png)
 ![hw21t2p4](https://github.com/Engelko/DevOps_course/blob/HW21/Bash_scripts/HW21/hw21t2p4.png)
 ![hw21t3p1](https://github.com/Engelko/DevOps_course/blob/HW21/Bash_scripts/HW21/hw21t3p1.png)
+![hw21t3p2](https://github.com/Engelko/DevOps_course/blob/HW21/Bash_scripts/HW21/hw12t3p2.png)
