@@ -3,49 +3,34 @@
 - name: "Get variables from file"
   import_tasks: template.yml
 
-#Copy to Ubuntu
+#Copy to group linux
 - name: "Copy files to hosts"
   become: true
   become_user: root
   ansible.builtin.copy:
-   src: /home/engelko/DevOps_course/Bash_scripts/HW20/roles/hw202/files/curl_7.68.deb
-   dest: /tmp/curl_7.68.deb
+   src: "{{ src_curl }}"
+   dest: "{{ dest_curl }}"
    owner: hw20
    mode: 0744
-  when: ansible_facts['os_family'] == "Debian"
-  tags: cp_curl_cent
-  
-#Copy to CentOS
-- name: "Copy files to hosts"
-  become: true
-  become_user: root
-  ansible.builtin.copy:
-   src: /home/engelko/DevOps_course/Bash_scripts/HW20/roles/hw202/files/curl-7.29.rpm
-   dest: /tmp/curl-7.29.rpm
-   owner: hw20
-   mode: 0744
-  when: ansible_facts['os_family'] == "RedHat"
-  tags: cp_curl_cent
+  when: "'linux' in group_names"
   
 #Install Curl on Ubuntu
-- name: "Install curl .deb package"
+- name: "Install a .deb package "
   become: true
   ansible.builtin.apt:
-    deb: /tmp/curl_7.68.deb
+    deb: "{{ dest_curl }}"
     state: present
     update_cache: yes
-    install_recommends: yes 
+    install_recommends: yes
+    ignore_errors: yes
   when: ansible_facts['os_family'] == "Debian"
-  tags: install_curl_ubn
-  ignore_errors: yes
-  
-#Install Curl on CentOS
-- name: "Install curl .rpm package"
+ 
+  #Install Curl on CentOS
+- name: "Install a .rpm package"
   become: true
   ansible.builtin.yum:
-    name: /tmp/curl-7.29.rpm
+    name: "{{ dest_curl }}"
     state: present
     update_cache: yes
+    allow_downgrade: yes
   when: ansible_facts['os_family'] == "RedHat"
-  tags: install_curl_cent
-
