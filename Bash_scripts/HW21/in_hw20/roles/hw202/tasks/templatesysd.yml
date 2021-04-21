@@ -1,0 +1,26 @@
+# Copy  file .sh to hosts
+- name: "Template sh to hosts"
+  ansible.builtin.template:
+    src: /home/engelko/DevOps_course/Bash_scripts/HW21/in_hw20/roles/hw202/files/sysdlogging.sh
+    dest: /tmp/logdeamon.sh
+    owner: root
+    mode: '0744'
+  become: true
+
+  # Copy  file .service to hosts
+- name: "Template service.file to hosts"
+  ansible.builtin.template:
+    src: /home/engelko/DevOps_course/Bash_scripts/HW21/in_hw20/roles/hw202/templates/logsysd.service.j2
+    dest: /lib/systemd/system/logsysd.service
+    owner: root
+    mode: '0644'
+  become: true
+
+  # Copy  file .timer to hosts
+- name: "Template timer.file to hosts"
+  ansible.builtin.template:
+    src: /home/engelko/DevOps_course/Bash_scripts/HW21/in_hw20/roles/hw202/templates/logsysd.timer.j2
+    dest: /lib/systemd/system/logsysd.timer
+    owner: root
+    mode: '0644'
+  become: true
