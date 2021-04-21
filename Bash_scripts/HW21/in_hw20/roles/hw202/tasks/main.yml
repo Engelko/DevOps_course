@@ -53,18 +53,7 @@
 - name: "Push sh to hosts"
   import_tasks: templatesysd.yml
 
-# #Start service systemd logging
-# - name: Start and Enabled timer logsysd
-#   ansible.builtin.service:
-#     name: logsysd.timer
-#     state: started
-#     enabled: yes
-
-# - name: Start and Enabled service logsysd
-#   ansible.builtin.service:
-#     name: logsysd.service
-#     state: started
-#     enabled: yes
+#Start service systemd logging
 - name: Start logsysd
   systemd:
     name: "{{ item }}"
