@@ -1,4 +1,4 @@
-- name: "Install programs on CentOS"
+- name: "Install git and pyhton3"
   ansible.builtin.package:
    name: "{{ item }}"
    state: latest
@@ -8,4 +8,4 @@
    - python3
    
   become: true
-  when: ansible_facts['os_family'] == "RedHat"
+  when: "'linux' in group_names"

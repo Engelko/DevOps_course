@@ -30,7 +30,7 @@
         - { name: docker-ce=5:20.10.6~3-0~ubuntu-focal}
         - { name: docker-ce-cli=5:20.10.6~3-0~ubuntu-focal} 
         - { name: containerd.io=1.4.4-1} 
-             
+        
     - name: "Add Docker to start up"
       ansible.builtin.service:
        name: docker
@@ -41,7 +41,7 @@
   become: true
 
 #CentOS
-- name: "Install Docker on Centos"
+- name: "Install Docker on Ubuntu"
   block:
     - name: "Add Docker repo"
       ansible.builtin.get_url:

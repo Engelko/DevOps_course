@@ -1,4 +1,5 @@
 #Ubuntu vars
-ansible_user: vagrant
-ansible_ssh_private_key_file: /home/engelko/.ssh/id_rsa
 group_hw20: ZONE_1
+group_sudo: sudo,docker
+src_curl: /home/engelko/DevOps_course/Bash_scripts/HW20/roles/hw202/files/curl_7.68.deb
+dest_curl: /tmp/curl_7.68.deb
