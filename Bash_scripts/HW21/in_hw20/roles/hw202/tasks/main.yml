@@ -8,10 +8,12 @@
   become: true
   become_user: root
   ansible.builtin.copy:
-   src: "{{ src_curl }}"
+   src: "{{ item }}"
    dest: "{{ dest_curl }}"
    owner: hw20
    mode: 0744
+  loop: 
+   - "{{ src_curl }}"
   when: "'linux' in group_names"
   
 #Install Curl on Ubuntu
