@@ -1,5 +1,5 @@
 #Centos vars
 group_hw20: ZONE_2
 group_sudo: wheel,docker
-src_curl: /home/engelko/DevOps_course/Bash_scripts/HW20/roles/hw202/files/curl-7.29.rpm
+src_curl: curl-7.29.rpm
 dest_curl: /tmp/curl-7.29.rpm
