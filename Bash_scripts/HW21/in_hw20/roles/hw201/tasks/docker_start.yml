@@ -1,0 +1,16 @@
+#Install Docker engine and Start docker service
+
+- name: "Install Docker Engine"
+  ansible.builtin.package:
+    name: "{{item}}"
+    update_cache: yes
+  loop:
+    - docker-ce
+    - docker-ce-cli
+    - containerd.io
+             
+- name: "Add Docker to start up"
+  ansible.builtin.service:
+   name: docker
+   state: started
+   enabled: yes
