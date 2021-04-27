@@ -29,7 +29,7 @@
   become: true
 
 #CentOS
-- name: "Install Docker on Ubuntu"
+- name: "Install Docker on CentOS"
   block:
     - name: "Add Docker repo"
       ansible.builtin.get_url:
