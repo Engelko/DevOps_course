@@ -1,0 +1,8 @@
+handlers:
+ - name: "Add Docker to start up"
+   ansible.builtin.service:
+    name: docker
+    state: started
+    enabled: yes
+   listen: "Docker start"
+
