@@ -21,9 +21,16 @@
       ansible.builtin.apt_repository:
        repo: deb https://download.docker.com/linux/ubuntu focal stable
        state: present
-       
-    - name: Install and Start docker engine
-      import_tasks: docker_start.yml
+   
+    - name: "Install Docker Engine"
+      ansible.builtin.package:
+       name: "{{item}}"
+       update_cache: yes
+      loop:
+       - docker-ce
+       - docker-ce-cli
+       - containerd.io
+      notify: "Docker start"
            
   when: ansible_facts['os_family'] == "Debian"
   become: true
@@ -35,10 +42,16 @@
       ansible.builtin.get_url:
        url: https://download.docker.com/linux/centos/docker-ce.repo
        dest: /etc/yum.repos.d/docer-ce.repo
-      
-    - name: Install and Start docker engine
-      import_tasks: docker_start.yml
-       
+
+    - name: "Install Docker Engine"
+      ansible.builtin.package:
+       name: "{{item}}"
+       update_cache: yes
+      loop:
+       - docker-ce
+       - docker-ce-cli
+       - containerd.io
+      notify: "Docker start"
   when: ansible_facts['os_family'] == "RedHat"
   become: true
-  
+

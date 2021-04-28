@@ -14,7 +14,7 @@
    mode: 0744
   loop: 
    - "{{ src_curl }}"
-  when: "'linux' in group_names"
+
   
 #Install Curl on Ubuntu
 - name: "Install a .deb package "
