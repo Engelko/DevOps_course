@@ -4,14 +4,14 @@ group_sudo: sudo,docker
 src_curl: curl_7.68.deb
 dest_curl: /tmp/curl_7.68.deb
 trans_ver: 2.0.5
-ca-cert_ver: 20210119~20.04.1
+cacert_ver: 20210119~20.04.1
 gnupg_ver: 2.2.19-3ubuntu2.1
 curl_ver: 7.68.0-1ubuntu2.5
 lsb_ver: 11.1.0ubuntu2
 packages: 
- - apt-transport-https="{{ trans_ver }}"
- - ca-certificates="{{ ca-cert_ver }}"
- - gnupg="{{ gnupg_ver }}"
- - curl="{{ curl_ver }}"
- - lsb-release="{{ lsb_ver }}"
+ - "apt-transport-https={{ trans_ver }}"
+ - "ca-certificates={{ cacert_ver }}"
+ - "gnupg={{ gnupg_ver }}"
+ - "curl={{ curl_ver }}"
+ - "lsb-release={{ lsb_ver }}"
  

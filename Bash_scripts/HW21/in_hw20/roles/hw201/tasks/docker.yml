@@ -3,10 +3,8 @@
   block:
     - name: "Set up the repository"
       ansible.builtin.package:
-       name: "{{item}}"
+       name: "{{ packages }}"
        update_cache: yes
-      loop:
-       - "{{ packages }}"
 
     - name: "Add GPG key"
       ansible.builtin.apt_key:
