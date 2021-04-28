@@ -1,7 +1,9 @@
 - name: "Template a file to /tmp/HW20_FILE_INFO"
   ansible.builtin.template:
-    src:  main.j2
-    dest: /tmp/HW20_FILE_INFO
-    owner: hw20
-    mode: '0644'
+    src:  "{{ item.src }}"
+    dest: "{{ item.dest }}"
+    owner: "{{ item.owner }}"
+    mode: "{{ item.mode }}"
+  with_items:
+   - "{{ var_template }}"
   become: true

@@ -3,35 +3,22 @@
   block:
     - name: "Set up the repository"
       ansible.builtin.package:
-       name: "{{item}}"
+       name: "{{ item.name }}={{ item.version }}"
        update_cache: yes
-      loop:
-       - apt-transport-https
-       - ca-certificates
-       - gnupg
-       - libcurl4
-       - lsb-release
+      with_items:
+       - "{{ packages }}"
 
     - name: "Add GPG key"
       ansible.builtin.apt_key:
-       url: https://download.docker.com/linux/ubuntu/gpg
+       url: "{{ item.url }}"
        state: present
-       
+      with_items:
+       - "{{ url_key}}"
+
     - name: "Add repos"
       ansible.builtin.apt_repository:
-       repo: deb https://download.docker.com/linux/ubuntu focal stable
-       state: present
-   
-    - name: "Install Docker Engine"
-      ansible.builtin.package:
-       name: "{{item}}"
-       update_cache: yes
-      loop:
-       - docker-ce
-       - docker-ce-cli
-       - containerd.io
-      notify: "Docker start"
-           
+       repo: "{{ repo }}"
+       state: present        
   when: ansible_facts['os_family'] == "Debian"
   become: true
 
@@ -40,18 +27,17 @@
   block:
     - name: "Add Docker repo"
       ansible.builtin.get_url:
-       url: https://download.docker.com/linux/centos/docker-ce.repo
-       dest: /etc/yum.repos.d/docer-ce.repo
-
-    - name: "Install Docker Engine"
-      ansible.builtin.package:
-       name: "{{item}}"
-       update_cache: yes
-      loop:
-       - docker-ce
-       - docker-ce-cli
-       - containerd.io
-      notify: "Docker start"
+       url: "{{ item.url }}"
+       dest: "{{ item.dest }}"
+      with_items: "{{ url_key }}"
   when: ansible_facts['os_family'] == "RedHat"
   become: true
 
+- name: "Install Docker Engine"
+  ansible.builtin.package:
+   name: "{{ item.name }}{{ item.version }}"
+   update_cache: yes
+  with_items:
+    - "{{ pack_docker }}"
+  notify: "Docker start"
+  become: true
