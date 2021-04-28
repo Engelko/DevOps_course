@@ -3,7 +3,7 @@
    name: "{{ item }}"
    state: latest
    update_cache: yes
-  loop:
+  with_items:
    - git
    - python3
    
