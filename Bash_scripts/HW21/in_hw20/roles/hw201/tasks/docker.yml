@@ -6,11 +6,7 @@
        name: "{{item}}"
        update_cache: yes
       loop:
-       - apt-transport-https=2.0.5
-       - ca-certificates=20210119~20.04.1
-       - gnupg=2.2.19-3ubuntu2.1
-       - curl=7.68.0-1ubuntu2.5
-       - lsb-release=11.1.0ubuntu2
+       - "{{ packages }}"
 
     - name: "Add GPG key"
       ansible.builtin.apt_key:
@@ -31,13 +27,13 @@
 #CentOS
 - name: "Install Docker on Ubuntu"
   block:
-    - name: "Add Docker repo"
-      ansible.builtin.get_url:
+   - name: "Add Docker repo"
+     ansible.builtin.get_url:
        url: https://download.docker.com/linux/centos/docker-ce.repo
        dest: /etc/yum.repos.d/docer-ce.repo
       
-    - name: Install and Start docker engine
-      import_tasks: docker_start.yml
+   - name: Install and Start docker engine
+     import_tasks: docker_start.yml
        
   when: ansible_facts['os_family'] == "RedHat"
   become: true
