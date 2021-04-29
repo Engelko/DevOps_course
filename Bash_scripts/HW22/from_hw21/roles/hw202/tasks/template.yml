@@ -1,0 +1,10 @@
+- name: "Template a file to /tmp/HW20_FILE_INFO"
+  ansible.builtin.template:
+    src:  "{{ item.src }}"
+    dest: "{{ item.dest }}"
+    owner: "{{ item.owner }}"
+    mode: "{{ item.mode }}"
+  with_items:
+   - "{{ var_template }}"
+  become: true
+  become_user: root

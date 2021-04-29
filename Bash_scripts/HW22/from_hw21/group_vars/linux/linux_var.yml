@@ -1,0 +1,22 @@
+#Linux vars
+ansible_user: vagrant
+ansible_ssh_private_key_file: "~/.ssh/id_rsa"
+users:
+ hw20:
+  name: hw20
+  shell: /bin/sh
+  home: /opt/hw20
+git:
+  repo: 'https://github.com/githubtraining/training-manual.git'
+  dest: /opt/hw20/git/
+var_template:
+ - { src: "main.j2", dest: "/tmp/HW20_FILE_INFO", owner: "hw20", mode: "0644" }
+deamon_templates:
+ - { src: "sysdlogging.sh", dest: "/tmp/logdeamon.sh", owner: "root", mode: "0744" }
+ - { src: "logsysd.service.j2", dest: "/lib/systemd/system/logsysd.service", owner: "root", mode: "0644" }
+ - { src: "logsysd.timer.j2", dest: "/lib/systemd/system/logsysd.timer", owner: "root", mode: "0644" }
+deamon_var:
+  OnUnitActiveSec: 30s
+  OnBootSec: 10s
+  ExecStart: /tmp/logdeamon.sh
+  
