@@ -12,4 +12,3 @@ pack_docker:
  - { name: "containerd.io-", version: "1.4.4-3.1.el7" }
 url_key:
  - { url: "https://download.docker.com/linux/centos/docker-ce.repo", dest: "/etc/yum.repos.d/docer-ce.repo" }
- 

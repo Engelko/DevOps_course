@@ -5,5 +5,5 @@
     dest: "{{ item.dest }}"
     owner: "{{ item.owner }}"
     mode: "{{ item.mode }}"
-  with_items:
-   - "{{ deamon_templates }}"
+  loop: "{{ deamon_templates }}"
+  
