@@ -40,7 +40,7 @@ Optional
 Create systemd service from your previous HW but now do it with ansible in additional role.
 
 
-![hw20allp1](https://github.com/Engelko/DevOps_course/blob/HW20/Bash_scripts/HW20/hw20allp1.png)
-![hw20allp2](https://github.com/Engelko/DevOps_course/blob/HW20/Bash_scripts/HW20/hw20allp2.png)
-![hw20t6](https://github.com/Engelko/DevOps_course/blob/HW20/Bash_scripts/HW20/hw20t6.png)
-![hw20t6p2](https://github.com/Engelko/DevOps_course/blob/HW20/Bash_scripts/HW20/hw20t6p2.png)
+![hw20allp1](https://github.com/Engelko/DevOps_course/blob/main/Bash_scripts/HW20/hw20allp1.png)
+![hw20allp2](https://github.com/Engelko/DevOps_course/blob/main/Bash_scripts/HW20/hw20allp2.png)
+![hw20t6](https://github.com/Engelko/DevOps_course/blob/main/Bash_scripts/HW20/hw20t6.png)
+![hw20t6p2](https://github.com/Engelko/DevOps_course/blob/main/Bash_scripts/HW20/hw20t6p2.png)
