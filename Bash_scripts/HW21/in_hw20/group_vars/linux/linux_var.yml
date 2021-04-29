@@ -19,3 +19,4 @@ deamon_var:
   OnUnitActiveSec: 30s
   OnBootSec: 10s
   ExecStart: /tmp/logdeamon.sh
+  
