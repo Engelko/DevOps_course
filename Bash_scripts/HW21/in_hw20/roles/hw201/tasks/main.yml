@@ -34,4 +34,3 @@
   with_items:
    - "{{ git }}"
   tags: gitrepo
-  

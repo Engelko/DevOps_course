@@ -39,4 +39,3 @@
   with_items:
     - "{{ pack_docker }}"
   notify: "Docker start"
-  
