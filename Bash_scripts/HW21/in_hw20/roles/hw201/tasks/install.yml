@@ -1,11 +1,7 @@
+
 - name: "Install git and pyhton3"
   ansible.builtin.package:
-   name: "{{ item }}"
-   state: latest
+   name: "{{ item.name }}{{ item.version }}"
    update_cache: yes
   with_items:
-   - git
-   - python3
-   
-  become: true
-  when: "'linux' in group_names"
+   - "{{ pack_git_pyt }}" 

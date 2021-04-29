@@ -1,22 +1,24 @@
-  
 #For Linux group
 - name: Install git and pyhton3
   import_tasks: install.yml
+  become: true
   
 #Install docker
 - name: Install docker
-  import_tasks: docker.yml 
+  import_tasks: docker.yml
+  become: true
    
 #Add user for linux group
 - name: Add the user 'hw20' with a sh shell and '/opt/hw20' home directory
   ansible.builtin.user:
-   name: hw20
-   shell: /bin/sh
-   home: /opt/hw20
+   name: "{{ item.name }}"
+   shell: "{{ item.shell }}"
+   home: "{{ item.home }}"
    groups: "{{ group_sudo }}"
    state: present
+  with_items:
+    - "{{ users.hw20 }}"
   become: true
-  when: "'linux' in group_names"
      
 #Reset connection  
 - name: reset ssh connection to allow user changes to affect 'current login user'
@@ -25,10 +27,11 @@
 #Pull public git repo
 - name: Pull public git repo as user hw20 to /opt/hw20/
   ansible.builtin.git:
-     repo: 'https://github.com/githubtraining/training-manual.git'
-     dest: /opt/hw20/git/
+     repo: "{{ item.repo }}"
+     dest: "{{ item.dest }}"
      clone: yes
   become: yes
+  with_items:
+   - "{{ git }}"
   tags: gitrepo
-  
   

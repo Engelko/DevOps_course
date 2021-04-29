@@ -2,8 +2,8 @@
 Description=timer for system_monitor
 
 [Timer]
-OnUnitActiveSec=30s
-OnBootSec=10s
+OnUnitActiveSec="{{ deamon_var.OnUnitActiveSec }}"
+OnBootSec="{{ deamon_var.OnBootSec }}"
 
 [Install]
 WantedBy=timers.target

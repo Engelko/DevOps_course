@@ -8,46 +8,40 @@
   become: true
   become_user: root
   ansible.builtin.copy:
-   src: "{{ item }}"
-   dest: "{{ dest_curl }}"
-   owner: hw20
-   mode: 0744
-  loop: 
-   - "{{ src_curl }}"
-  when: "'linux' in group_names"
+   src: "{{ item.src }}"
+   dest: "{{ item.dest }}"
+   owner: "{{ item.owner }}"
+   mode: "{{ item.mode }}"
+  with_items: 
+   - "{{ path_files }}"
+
   
 #Install Curl on Ubuntu
 - name: "Install a .deb package "
   become: true
   ansible.builtin.apt:
-    deb: "{{ dest_curl }}"
+    deb: "{{ item.dest }}"
     state: present
     update_cache: yes
     install_recommends: yes
+  with_items:
+   - "{{ path_files }}"  
   when: ansible_facts['os_family'] == "Debian"
  
   #Install Curl on CentOS
 - name: "Install a .rpm package"
   become: true
   ansible.builtin.yum:
-    name: "{{ dest_curl }}"
+    name: "{{ item.dest }}"
     state: present
     update_cache: yes
     allow_downgrade: yes
+  with_items:
+   - "{{ path_files }}"
   when: ansible_facts['os_family'] == "RedHat"
-
-#Copy sh files to hosts
-- name: "Push sh to hosts"
+  
+#Copy  files to hosts for systemd logs
+- name: "Push files to hosts"
   import_tasks: templatesysd.yml
-
-#Start service systemd logging
-- name: Start logsysd
-  systemd:
-    name: "{{ item }}"
-    state: started
-    enabled: yes
-  become: yes
-  become_user: root
-  loop:
-   - logsysd.timer
-   - logsysd.service
+  become: true
+  notify: "logsysd start"

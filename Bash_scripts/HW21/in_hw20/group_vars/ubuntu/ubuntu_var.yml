@@ -1,17 +1,21 @@
 #Ubuntu vars
 group_hw20: ZONE_1
 group_sudo: sudo,docker
-src_curl: curl_7.68.deb
-dest_curl: /tmp/curl_7.68.deb
-trans_ver: 2.0.5
-cacert_ver: 20210119~20.04.1
-gnupg_ver: 2.2.19-3ubuntu2.1
-curl_ver: 7.68.0-1ubuntu2.5
-lsb_ver: 11.1.0ubuntu2
-packages: 
- - "apt-transport-https={{ trans_ver }}"
- - "ca-certificates={{ cacert_ver }}"
- - "gnupg={{ gnupg_ver }}"
- - "curl={{ curl_ver }}"
- - "lsb-release={{ lsb_ver }}"
- 
+path_files:
+ - { src: "curl_7.68.deb", dest: "/tmp/curl_7.68.deb", owner: "hw20", mode: "0744" }
+packages:
+ - { name: "apt-transport-https", version: "2.0.5" }
+ - { name: "ca-certificates", version: "20210119~20.04.1" }
+ - { name: "gnupg", version: "2.2.19-3ubuntu2.1" }
+ - { name: "curl", version: "7.68.0-1ubuntu2.5" }
+ - { name: "lsb-release", version: "11.1.0ubuntu2" } 
+pack_git_pyt:
+ - { name: "git=", version: "1:2.25.1-1ubuntu3.1" }
+ - { name: "python3=", version: "3.8.2-0ubuntu2" }
+pack_docker:
+ - { name: "docker-ce=", version: "5:20.10.6~3-0~ubuntu-focal" }
+ - { name: "docker-ce-cli=", version: "5:20.10.6~3-0~ubuntu-focal" }
+ - { name: "containerd.io=", version: "1.4.4-1" }
+url_key:
+ - { url: "https://download.docker.com/linux/ubuntu/gpg", dest: "" }
+repo: deb https://download.docker.com/linux/ubuntu focal stable
