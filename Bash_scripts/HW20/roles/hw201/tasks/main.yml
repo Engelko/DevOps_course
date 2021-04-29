@@ -1,10 +1,12 @@
 #For Linux group
 - name: Install git and pyhton3
   import_tasks: install.yml
+  become: true
   
 #Install docker
 - name: Install docker
-  import_tasks: docker.yml 
+  import_tasks: docker.yml
+  become: true
    
 #Add user for linux group
 - name: Add the user 'hw20' with a sh shell and '/opt/hw20' home directory

@@ -4,5 +4,4 @@
    update_cache: yes
   with_items:
    - "{{ pack_git_pyt }}" 
-  become: true
 

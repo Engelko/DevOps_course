@@ -20,7 +20,6 @@
        repo: "{{ repo }}"
        state: present        
   when: ansible_facts['os_family'] == "Debian"
-  become: true
 
 #CentOS
 - name: "Install Docker on CentOS"
@@ -31,7 +30,6 @@
        dest: "{{ item.dest }}"
       with_items: "{{ url_key }}"
   when: ansible_facts['os_family'] == "RedHat"
-  become: true
 
 - name: "Install Docker Engine"
   ansible.builtin.package:
@@ -40,5 +38,4 @@
   with_items:
     - "{{ pack_docker }}"
   notify: "Docker start"
-  become: true
   
