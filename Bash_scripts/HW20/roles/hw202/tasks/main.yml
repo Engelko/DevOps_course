@@ -1,0 +1,43 @@
+---
+#Get info from files
+- name: "Get variables from file"
+  import_tasks: template.yml
+
+#Copy to group linux
+- name: "Copy files to hosts"
+  become: true
+  become_user: root
+  ansible.builtin.copy:
+   src: "{{ item.src }}"
+   dest: "{{ item.dest }}"
+   owner: "{{ item.owner }}"
+   mode: "{{ item.mode }}"
+  with_items: 
+   - "{{ path_files }}"
+
+  
+#Install Curl on Ubuntu
+- name: "Install a .deb package "
+  become: true
+  ansible.builtin.apt:
+    deb: "{{ item.dest }}"
+    state: present
+    update_cache: yes
+    install_recommends: yes
+  with_items:
+   - "{{ path_files }}"  
+  when: ansible_facts['os_family'] == "Debian"
+ 
+  #Install Curl on CentOS
+- name: "Install a .rpm package"
+  become: true
+  ansible.builtin.yum:
+    name: "{{ item.dest }}"
+    state: present
+    update_cache: yes
+    allow_downgrade: yes
+  with_items:
+   - "{{ path_files }}"
+  when: ansible_facts['os_family'] == "RedHat"
+  
+  

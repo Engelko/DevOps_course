@@ -1,0 +1,8 @@
+- name: "Install git and pyhton3"
+  ansible.builtin.package:
+   name: "{{ item.name }}{{ item.version }}"
+   update_cache: yes
+  with_items:
+   - "{{ pack_git_pyt }}" 
+  become: true
+

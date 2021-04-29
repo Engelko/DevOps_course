@@ -1,0 +1,44 @@
+#Ubuntu
+- name: "Install Docker on Ubuntu"
+  block:
+    - name: "Set up the repository"
+      ansible.builtin.package:
+       name: "{{ item.name }}={{ item.version }}"
+       update_cache: yes
+      with_items:
+       - "{{ packages }}"
+
+    - name: "Add GPG key"
+      ansible.builtin.apt_key:
+       url: "{{ item.url }}"
+       state: present
+      with_items:
+       - "{{ url_key}}"
+
+    - name: "Add repos"
+      ansible.builtin.apt_repository:
+       repo: "{{ repo }}"
+       state: present        
+  when: ansible_facts['os_family'] == "Debian"
+  become: true
+
+#CentOS
+- name: "Install Docker on CentOS"
+  block:
+    - name: "Add Docker repo"
+      ansible.builtin.get_url:
+       url: "{{ item.url }}"
+       dest: "{{ item.dest }}"
+      with_items: "{{ url_key }}"
+  when: ansible_facts['os_family'] == "RedHat"
+  become: true
+
+- name: "Install Docker Engine"
+  ansible.builtin.package:
+   name: "{{ item.name }}{{ item.version }}"
+   update_cache: yes
+  with_items:
+    - "{{ pack_docker }}"
+  notify: "Docker start"
+  become: true
+  
