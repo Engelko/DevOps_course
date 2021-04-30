@@ -6,5 +6,3 @@
     mode: "{{ item.mode }}"
   with_items:
    - "{{ var_template }}"
-  become: true
-  become_user: root

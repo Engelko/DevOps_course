@@ -6,20 +6,26 @@
 #Install docker
 - name: Install docker
   import_tasks: docker.yml
-  become: true
-   
+  become: true 
+
+#  Optional sudo or wheel group for user hw20
+# If the value "{{ group_sudo }}" is not specified, the group will not be added
+- name: Optional sudo group for user hw20
+  set_fact: sgroup="{{ group_sudo }}"
+  when: group_sudo is defined
+
 #Add user for linux group
 - name: Add the user 'hw20' with a sh shell and '/opt/hw20' home directory
   ansible.builtin.user:
    name: "{{ item.name }}"
    shell: "{{ item.shell }}"
    home: "{{ item.home }}"
-   groups: "{{ group_sudo }}"
+   groups: "{{ item.group }},{{ sgroup }}"
    state: present
   with_items:
     - "{{ users.hw20 }}"
   become: true
-     
+
 #Reset connection  
 - name: reset ssh connection to allow user changes to affect 'current login user'
   meta: reset_connection  
@@ -30,7 +36,7 @@
      repo: "{{ item.repo }}"
      dest: "{{ item.dest }}"
      clone: yes
-  become: yes
   with_items:
    - "{{ git }}"
+  become: yes
   tags: gitrepo

@@ -1,6 +1,6 @@
 #Centos vars
 group_hw20: ZONE_2
-group_sudo: wheel,docker
+group_sudo: wheel            # If the value is not specified, the group will not be added
 path_files:
  - { src: "curl-7.29.rpm", dest: "/tmp/curl-7.29.rpm", owner: "hw20", mode: "0744" }
 pack_git_pyt:

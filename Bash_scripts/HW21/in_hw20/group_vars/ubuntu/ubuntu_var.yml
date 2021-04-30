@@ -1,6 +1,6 @@
 #Ubuntu vars
 group_hw20: ZONE_1
-group_sudo: sudo,docker
+group_sudo: sudo          # If the value is not specified, the group will not be added
 path_files:
  - { src: "curl_7.68.deb", dest: "/tmp/curl_7.68.deb", owner: "hw20", mode: "0744" }
 packages:
@@ -19,4 +19,3 @@ pack_docker:
 url_key:
  - { url: "https://download.docker.com/linux/ubuntu/gpg", dest: "" }
 repo: deb https://download.docker.com/linux/ubuntu focal stable
-

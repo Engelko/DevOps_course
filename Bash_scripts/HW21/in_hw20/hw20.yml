@@ -1,5 +1,4 @@
 # tasks hw20
-
 - hosts: linux
   tags: hw201
   roles:
