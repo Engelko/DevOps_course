@@ -1,4 +1,9 @@
 ---
+# Optional compress logrotate for /tmp/custom_deamon.log
+- name: Optional compress logrotate
+  set_fact: compress="{{ compres }}"
+  when: compres is defined
+
 #Get info from files
 - name: "Get variables from file"
   import_tasks: template.yml

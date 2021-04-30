@@ -7,6 +7,9 @@ users:
   shell: /bin/sh
   home: /opt/hw20
   group: docker
+users_hw22:
+ - { name: hw22_1, groups: "docker", shell: /bin/sh, home: /opt/hw22_1}
+ - { name: hw22_2, groups: "docker", shell: /bin/sh, home: /opt/hw22_2}
 git:
   repo: 'https://github.com/githubtraining/training-manual.git'
   dest: /opt/hw20/git/
@@ -16,7 +19,12 @@ deamon_templates:
  - { src: "sysdlogging.sh", dest: "/tmp/logdeamon.sh", owner: "root", mode: "0744" }
  - { src: "logsysd.service.j2", dest: "/lib/systemd/system/logsysd.service", owner: "root", mode: "0644" }
  - { src: "logsysd.timer.j2", dest: "/lib/systemd/system/logsysd.timer", owner: "root", mode: "0644" }
+ - { src: "logrotate.j2", dest: "/etc/logrotate.d/logsysd", owner: "root", mode: "0644" }
+# Templates Variables
 deamon_var:
-  OnUnitActiveSec: 30s
-  OnBootSec: 10s
-  ExecStart: /tmp/logdeamon.sh
+ OnUnitActiveSec: 30s
+ OnBootSec: 10s
+ ExecStart: /tmp/logdeamon.sh
+period: weekly
+rotate: 5
+compres: compress  # If the value is not specified, the compress will not be added / compress 
