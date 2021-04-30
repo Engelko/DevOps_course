@@ -1,0 +1,56 @@
+---
+#Get info from files
+- name: "Get variables from file"
+  import_tasks: template.yml
+  become: true
+
+#Copy to group linux
+- name: "Copy files to hosts"
+  become: true
+  become_user: root
+  ansible.builtin.copy:
+   src: "{{ item.src }}"
+   dest: "{{ item.dest }}"
+   owner: "{{ item.owner }}"
+   mode: "{{ item.mode }}"
+  with_items: 
+   - "{{ path_files }}"
+
+#Copy  files to hosts for systemd logs
+- name: "Push files to hosts"
+  import_tasks: templatesysd.yml
+  become: true
+
+#Start service systemd logging
+- name: "Start logsysd"
+  systemd:
+    name: "{{ item }}"
+    state: started
+    enabled: yes
+  become: yes
+  become_user: root
+  loop:
+   - logsysd.timer
+   - logsysd.service
+
+#Install Curl on Ubuntu
+- name: "Install a .deb package "
+  become: true
+  ansible.builtin.apt:
+    deb: "{{ item.dest }}"
+    state: present
+  with_items:
+   - "{{ path_files }}"  
+  when: ansible_facts['os_family'] == "Debian"
+ 
+  #Install Curl on CentOS
+- name: "Install a .rpm package"
+  become: true
+  ansible.builtin.yum:
+    name: "{{ item.dest }}"
+    state: present
+    update_cache: yes
+    allow_downgrade: yes
+  with_items:
+   - "{{ path_files }}"
+  when: ansible_facts['os_family'] == "RedHat"
