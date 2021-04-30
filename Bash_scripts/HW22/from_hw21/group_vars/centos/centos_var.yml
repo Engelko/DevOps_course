@@ -1,6 +1,6 @@
 #Centos vars
 group_hw20: ZONE_2
-group_sudo: wheel,docker
+group_sudo: wheel            # If the value is not specified, the group will not be added
 path_files:
  - { src: "curl-7.29.rpm", dest: "/tmp/curl-7.29.rpm", owner: "hw20", mode: "0744" }
 pack_git_pyt:
@@ -12,4 +12,3 @@ pack_docker:
  - { name: "containerd.io-", version: "1.4.4-3.1.el7" }
 url_key:
  - { url: "https://download.docker.com/linux/centos/docker-ce.repo", dest: "/etc/yum.repos.d/docer-ce.repo" }
- 

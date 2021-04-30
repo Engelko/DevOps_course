@@ -6,6 +6,7 @@ users:
   name: hw20
   shell: /bin/sh
   home: /opt/hw20
+  group: docker
 git:
   repo: 'https://github.com/githubtraining/training-manual.git'
   dest: /opt/hw20/git/
@@ -19,4 +20,3 @@ deamon_var:
   OnUnitActiveSec: 30s
   OnBootSec: 10s
   ExecStart: /tmp/logdeamon.sh
-  

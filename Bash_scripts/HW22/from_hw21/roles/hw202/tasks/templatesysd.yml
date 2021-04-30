@@ -1,9 +1,8 @@
 # Copy  files to hosts for systemd logs
-- name: "Template files to hosts"
+- name: "Template files to hosts for systemd logs"
   ansible.builtin.template:
     src: "{{ item.src }}"
     dest: "{{ item.dest }}"
     owner: "{{ item.owner }}"
     mode: "{{ item.mode }}"
-  with_items:
-   - "{{ deamon_templates }}"
+  loop: "{{ deamon_templates }}"
