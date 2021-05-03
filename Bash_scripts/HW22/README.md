@@ -13,3 +13,14 @@ Do not show output of this task.
 5.	Create files with {{hots_ip}}.txt for each your host. Add  task to copy file to remote host base on remote host IP.
 
 Next class - Still Ansible
+
+
+![hw22t1](https://github.com/Engelko/DevOps_course/blob/HW22/Bash_scripts/HW22/hw22t1.png)
+![hw22t1p2](https://github.com/Engelko/DevOps_course/blob/HW22/Bash_scripts/HW22/hw22t1p2.png)
+![hw22t1p3](https://github.com/Engelko/DevOps_course/blob/HW22/Bash_scripts/HW22/hw22t1p3.png)
+![hw22t1p4](https://github.com/Engelko/DevOps_course/blob/HW22/Bash_scripts/HW22/hw22t1p4.png)
+![hw22t1p5](https://github.com/Engelko/DevOps_course/blob/HW22/Bash_scripts/HW22/hw22t1p5.png)
+![hw22t2](https://github.com/Engelko/DevOps_course/blob/HW22/Bash_scripts/HW22/hw22t2.png)
+![hw22t3p1](https://github.com/Engelko/DevOps_course/blob/HW22/Bash_scripts/HW22/hw22t3p1.png)
+![hw22t5](https://github.com/Engelko/DevOps_course/blob/HW22/Bash_scripts/HW22/hw22t5.png)
+![hw22t5p1](https://github.com/Engelko/DevOps_course/blob/HW22/Bash_scripts/HW22/hw22t5p2.png)
