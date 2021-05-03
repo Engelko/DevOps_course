@@ -20,6 +20,8 @@ deamon_templates:
  - { src: "logsysd.service.j2", dest: "/lib/systemd/system/logsysd.service", owner: "root", mode: "0644" }
  - { src: "logsysd.timer.j2", dest: "/lib/systemd/system/logsysd.timer", owner: "root", mode: "0644" }
  - { src: "logrotate.j2", dest: "/etc/logrotate.d/logsysd", owner: "root", mode: "0644" }
+iphosts_template:
+ - { src: "{{ iphosts }}.txt", dest: "/tmp", owner: "hw20", mode: "0644" }
 # Templates Variables
 deamon_var:
  OnUnitActiveSec: 30s
@@ -27,4 +29,4 @@ deamon_var:
  ExecStart: /tmp/logdeamon.sh
 period: weekly
 rotate: 5
-compres: compress  # If the value is not specified, the compress will not be added / compress 
+compres: compress  # If the value is not specified, the compress will not be added / compress

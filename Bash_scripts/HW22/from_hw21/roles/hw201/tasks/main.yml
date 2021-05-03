@@ -26,6 +26,15 @@
     - "{{ users.hw20 }}"
   become: true
 
+  # Generate password for users hw22
+- name: Generate password for hosts
+  ansible.builtin.shell:
+    cmd: openssl rand -base64 10
+  register: genpassword
+
+- name: hash passwords
+  set_fact: password="{{ genpassword.stdout_lines | string | password_hash('sha512') }}"
+
 #Add users hw22_1 and hw22_2 for linux group
 - name: Add the user 'hw22_1 and m hw22_2' with a sh shell and '/opt/hw22' home directory
   ansible.builtin.user:
@@ -33,10 +42,16 @@
    shell: "{{ item.shell }}"
    home: "{{ item.home }}"
    groups: "{{ item.groups }}"
+   password: "{{ password }}"
    state: present
   loop: "{{ users_hw22 }}"
   no_log: false
   become: true
+
+# Print passwords for users hw22
+- name: print passwords
+  debug:
+    msg: "Your password is {{ genpassword.stdout_lines }} and your hash {{ password }}"
 
 #Reset connection  
 - name: reset ssh connection to allow user changes to affect 'current login user'

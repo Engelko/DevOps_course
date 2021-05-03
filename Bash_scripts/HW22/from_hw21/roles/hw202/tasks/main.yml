@@ -1,6 +1,15 @@
 ---
+# Find out hosts ip
+- name: "Find out hosts ip"
+  set_fact: iphosts={{ lookup('dig', ansible_host) }}
+  
+# Copy files in hosts {{ iphosts }}.txt
+- name: "Copy files in hosts"
+  import_tasks: templatehostsip.yml
+  become: true
+
 # Optional compress logrotate for /tmp/custom_deamon.log
-- name: Optional compress logrotate
+- name: "Optional compress logrotate"
   set_fact: compress="{{ compres }}"
   when: compres is defined
 
