@@ -1,0 +1,9 @@
+# Copy files an hosts ip
+- name: "Template copy  files to hosts ip"
+  ansible.builtin.template:
+    src:  "{{ item.src }}"
+    dest: "{{ item.dest }}"
+    owner: "{{ item.owner }}"
+    mode: "{{ item.mode }}"
+  with_items:
+   - "{{ iphosts_template }}"
