@@ -1,0 +1,57 @@
+# Create file /opt/hw23_test_file in remote hosts
+- name: "Touch file in remote hosts"
+  copy:
+    content: "{{ item.content }}"
+    dest: "{{ item.dest }}"
+    force: no
+    group: "{{ item.group }}"
+    owner: "{{ item.owner }}"
+    mode: "{{ item.mode }}"
+  loop: "{{ cr_file }}"
+  become: true
+
+# Rename file /opt/hw23_test_file if it exists, if not then issue a message
+- name: "Rename file /opt/hw23_test_file"
+  block:
+    - name: "stat for file /opt/hw23_test_file"
+      stat: path=/opt/hw23_test_file
+      register: file_stat
+
+    - name: "Debug message"
+      debug:
+       msg: "File /opt/hw23_test_file not found"
+      when: file_stat.stat.exists == False
+
+    - name: "Rename File /opt/hw23_test_file"
+      command: mv  /opt/hw23_test_file /opt/hw23_test_file_exists
+      when: file_stat.stat.exists
+  become: true
+
+# Create symbolic link /opt/hw23_link to /etc/hosts
+- name: Create symlink
+  file:
+    src: "{{ item.src }}"
+    dest: "{{ item.dest }}"
+    owner: "{{ item.owner }}"
+    group: "{{ item.group }}"
+    state: link
+  with_items:
+    - "{{ symlink }}"
+  become: true
+
+# Rename link /opt/hw23_link if it exists, if not then issue a message
+- name: "Rename link /opt/hw23_link"
+  block:
+    - name: "stat for link /opt/hw23_link"
+      stat: path=/opt/hw23_link
+      register: link_stat
+
+    - name: "Debug message"
+      debug:
+       msg: "Link /opt/hw23_link not found"
+      when: link_stat.stat.exists == False
+
+    - name: "Rename link /opt/hw23_link"
+      command: mv  /opt/hw23_link /opt/hw23_test_file_link
+      when: link_stat.stat.exists
+  become: true
