@@ -31,3 +31,6 @@ Optional:
 ![hw23t2c](https://github.com/Engelko/DevOps_course/blob/HW23/Bash_scripts/HW23/hw23t2c.png)
 ![hw23t2d1](https://github.com/Engelko/DevOps_course/blob/HW23/Bash_scripts/HW23/hw23t2d1.png)
 ![hw23t2d2](https://github.com/Engelko/DevOps_course/blob/HW23/Bash_scripts/HW23/hw23t2d2.png)
+![hw23t3](https://github.com/Engelko/DevOps_course/blob/HW23/Bash_scripts/HW23/hw23t3.png)
+![hw23t4](https://github.com/Engelko/DevOps_course/blob/HW23/Bash_scripts/HW23/hw23t4.png)
+![hw23t4p2](https://github.com/Engelko/DevOps_course/blob/HW23/Bash_scripts/HW23/hw23t4p2.png)
