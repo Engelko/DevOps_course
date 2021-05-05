@@ -5,3 +5,5 @@ cr_file:
  - { content: "", dest: "/opt/hw23_test_file", owner: "root", group: "root",  mode: "0644"  }
 symlink:
  - { src: "/etc/hosts", dest: "/opt/hw23_link", owner: "root", group: "root",  mode: "0644"  }
+docker: docker
+nginx: nginx
