@@ -1,0 +1,5 @@
+# tasks hw20
+- hosts: linux
+  tags: hw23
+  roles:
+   - hw23
