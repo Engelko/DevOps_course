@@ -16,3 +16,5 @@ users:
  - { name: user3, groups: "docker", shell: /bin/bash, home: /home/user3}
 datefile:
  - { src: "/tmp/update/date.txt", dest: "/home/vagrant/date.txt", owner: "root", group: "root",  mode: "0644"  }
+var_hw26: ed
+

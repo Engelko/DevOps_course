@@ -1,20 +1,25 @@
 # tasks hw24
 - hosts: linux
-  tags: hw23
+  strategy: free
+  tags: hw26
   roles:
-   - role: hw23
+   - hw26
+  
+  # tags: hw23
+  # roles:
+  #  - role: hw23
   #    vars: 
   #      fakepam: abc
   #  - role: hw23
   #    vars: 
   #       fakepam: cba
  
-- hosts: localhost
-  tags: cpfile
-  roles:
-   - cpfile
+# - hosts: localhost
+#   tags: cpfile
+#   roles:
+#    - cpfile
 
-- hosts: linux
-  tags: hw24
-  roles:
-   - hw24
+# - hosts: linux
+#   tags: hw24
+#   roles:
+#    - hw24
