@@ -1,0 +1,7 @@
+- name: Creates file in localhost
+  file:
+    path: /tmp/update/date.txt
+    state: touch
+
+- name: add date in date.txt
+  ansible.builtin.shell: cd /tmp/update/ && date >> date.txt
