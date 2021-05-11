@@ -23,3 +23,9 @@
 ## 4.	How we can check if variable have specific value. If not, fail the play. How to fail task only. Also do it using assert.
 
 ## 5.	Create asynchronous ansible task and check it result
+
+
+![hw26t1t2t3](https://github.com/Engelko/DevOps_course/blob/HW26/Bash_scripts/HW26/hw26t1t2t3.png)
+![hw26t4p1](https://github.com/Engelko/DevOps_course/blob/HW26/Bash_scripts/HW26/hw26t4p1.png)
+![hw26t4p2](https://github.com/Engelko/DevOps_course/blob/HW26/Bash_scripts/HW26/hw26t4p2.png)
+![hw24t5](https://github.com/Engelko/DevOps_course/blob/HW26/Bash_scripts/HW26/hw26t5.png)
