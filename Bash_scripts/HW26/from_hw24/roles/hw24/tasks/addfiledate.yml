@@ -1,0 +1,9 @@
+# Copy file in hosts
+- name: Copy file with Date
+  ansible.builtin.copy:
+    src: "{{ item.src }}"
+    dest: "{{ item.dest }}"
+    owner: "{{ item.owner }}"
+    group: "{{ item.group }}"
+    mode: "{{ item.mode }}"
+  with_items: "{{ datefile }}"
