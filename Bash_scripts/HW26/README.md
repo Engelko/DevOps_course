@@ -10,9 +10,9 @@
       e.	Create user hw26
       f.	Install any package you like
 
-Ansible
+# Ansible
 
-  You can update your previous playbook. You can create hw26 role if needed
+###  You can update your previous playbook. You can create hw26 role if needed
 
 ## 1.	Create a task with sleep 20.
 
