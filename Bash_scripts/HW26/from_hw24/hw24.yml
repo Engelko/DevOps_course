@@ -1,0 +1,20 @@
+# tasks hw24
+- hosts: linux
+  tags: hw23
+  roles:
+   - role: hw23
+  #    vars: 
+  #      fakepam: abc
+  #  - role: hw23
+  #    vars: 
+  #       fakepam: cba
+ 
+- hosts: localhost
+  tags: cpfile
+  roles:
+   - cpfile
+
+- hosts: linux
+  tags: hw24
+  roles:
+   - hw24
