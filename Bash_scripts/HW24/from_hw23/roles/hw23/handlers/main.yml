@@ -1,14 +1,14 @@
  # Start Services Docker,Nginx
  - name: "Docker started"
    ansible.builtin.service:
-     name: "{{ docker }}"
+     name: docker
      state: started
      enabled: yes
    become_user: root
  
  - name: "nginx started"
    ansible.builtin.service:
-     name: "{{ nginx }}"
+     name: nginx
      state: started
      enabled: yes
    become_user: root
@@ -16,14 +16,14 @@
 # Restart service if services changed
  - name: "Docker restarted"
    ansible.builtin.service:
-     name: "{{ docker }}"
+     name: docker
      state: restarted
      enabled: yes
    when: service_change.changed
  
  - name: "nginx restarted"
    ansible.builtin.service:
-     name: "{{ nginx }}"
+     name: nginx
      state: restarted
      enabled: yes
    when: service_change.changed
