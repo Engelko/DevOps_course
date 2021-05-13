@@ -1,0 +1,2 @@
+# newhost:
+#  - { name: ubuntu2, group: linux,ubuntu, ipadd: 192.168.1.33}

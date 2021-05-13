@@ -5,3 +5,4 @@
 
 - name: add date in date.txt
   ansible.builtin.shell: cd /tmp/update/ && date >> date.txt
+

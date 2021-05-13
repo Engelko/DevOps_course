@@ -30,7 +30,7 @@
   loop: "{{ users_hw24 }}"
   become: true
   tags: add_user
-  no_log: True
+  # no_log: True
 
 # Reset connection  for hw24
 - name: reset ssh connection to allow user changes to affect 'current login user'

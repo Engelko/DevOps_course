@@ -1,5 +1,3 @@
-
-
 # Create file /opt/hw23_test_file in remote hosts
 - name: "Touch file in remote hosts"
   copy:
