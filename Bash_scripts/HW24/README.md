@@ -46,6 +46,7 @@
 ![hw24t9p2](https://github.com/Engelko/DevOps_course/blob/HW24/Bash_scripts/HW24/hw24t9p2.png)
 ![hw24t10p1](https://github.com/Engelko/DevOps_course/blob/HW24/Bash_scripts/HW24/hw24t10p1.png)
 ![hw24t10p2](https://github.com/Engelko/DevOps_course/blob/HW24/Bash_scripts/HW24/hw24t10p2.png)
+![hw24t11](https://github.com/Engelko/DevOps_course/blob/HW24/Bash_scripts/HW24/hw26t11.png)
 ![hw24t12](https://github.com/Engelko/DevOps_course/blob/HW24/Bash_scripts/HW24/hw24t12.png)
 ![hw24t13](https://github.com/Engelko/DevOps_course/blob/HW24/Bash_scripts/HW24/hw24t13.png)
 ![hw24t14](https://github.com/Engelko/DevOps_course/blob/HW24/Bash_scripts/HW24/hw24t14.png)
@@ -53,3 +54,6 @@
 ![hw24t16](https://github.com/Engelko/DevOps_course/blob/HW24/Bash_scripts/HW24/hw24t16.png)
 ![hw24t16p1](https://github.com/Engelko/DevOps_course/blob/HW24/Bash_scripts/HW24/hw23t16p1.png)
 ![hw24t16p2](https://github.com/Engelko/DevOps_course/blob/HW24/Bash_scripts/HW24/hw23t16p2.png)
+![hw24t20](https://github.com/Engelko/DevOps_course/blob/HW24/Bash_scripts/HW24/hw26t20.png)
+
+
