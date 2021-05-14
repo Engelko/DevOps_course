@@ -1,0 +1,365 @@
+Starting log 2021-05-13.22:43:26
+Adding key... OK
+Cleaning folders... OK
+Start Ansible... 
+
+PLAY [all] *********************************************************************
+
+TASK [Gathering Facts] *********************************************************
+ok: [192.168.1.31]
+
+TASK [add new node into runtime inventory] *************************************
+skipping: [192.168.1.31]
+
+PLAY [linux] *******************************************************************
+
+TASK [Gathering Facts] *********************************************************
+ok: [192.168.1.31]
+
+TASK [hw23 : Touch file in remote hosts] ***************************************
+changed: [192.168.1.31] => (item={'content': '', 'dest': '/opt/hw23_test_file', 'owner': 'root', 'group': 'root', 'mode': '0644'})
+
+TASK [hw23 : stat for file /opt/hw23_test_file] ********************************
+ok: [192.168.1.31]
+
+TASK [hw23 : Debug message] ****************************************************
+skipping: [192.168.1.31]
+
+TASK [hw23 : Rename File /opt/hw23_test_file] **********************************
+changed: [192.168.1.31]
+
+TASK [hw23 : Create symlink] ***************************************************
+changed: [192.168.1.31] => (item={'src': '/etc/hosts', 'dest': '/opt/hw23_link', 'owner': 'root', 'group': 'root', 'mode': '0644'})
+
+TASK [hw23 : stat for link /opt/hw23_link] *************************************
+ok: [192.168.1.31]
+
+TASK [hw23 : Debug message] ****************************************************
+skipping: [192.168.1.31]
+
+TASK [hw23 : Rename link /opt/hw23_link] ***************************************
+changed: [192.168.1.31]
+
+TASK [hw23 : Set up the repository] ********************************************
+ok: [192.168.1.31] => (item={'name': 'apt-transport-https', 'version': '2.0.5'})
+ok: [192.168.1.31] => (item={'name': 'ca-certificates', 'version': '20210119~20.04.1'})
+ok: [192.168.1.31] => (item={'name': 'gnupg', 'version': '2.2.19-3ubuntu2.1'})
+ok: [192.168.1.31] => (item={'name': 'curl', 'version': '7.68.0-1ubuntu2.5'})
+ok: [192.168.1.31] => (item={'name': 'lsb-release', 'version': '11.1.0ubuntu2'})
+
+TASK [hw23 : Add GPG key] ******************************************************
+ok: [192.168.1.31] => (item={'url': 'https://download.docker.com/linux/ubuntu/gpg', 'dest': ''})
+
+TASK [hw23 : Add repos] ********************************************************
+ok: [192.168.1.31]
+
+TASK [hw23 : Add Docker repo] **************************************************
+skipping: [192.168.1.31] => (item={'url': 'https://download.docker.com/linux/ubuntu/gpg', 'dest': ''}) 
+
+TASK [hw23 : Install epel] *****************************************************
+skipping: [192.168.1.31]
+
+TASK [hw23 : Install Docker and Nginx,  git and Pyhton] ************************
+ok: [192.168.1.31] => (item={'name': 'git=', 'version': '1:2.25.1-1ubuntu3.1'})
+ok: [192.168.1.31] => (item={'name': 'python3=', 'version': '3.8.2-0ubuntu2'})
+ok: [192.168.1.31] => (item={'name': 'docker-ce=', 'version': '5:20.10.6~3-0~ubuntu-focal'})
+ok: [192.168.1.31] => (item={'name': 'docker-ce-cli=', 'version': '5:20.10.6~3-0~ubuntu-focal'})
+ok: [192.168.1.31] => (item={'name': 'containerd.io=', 'version': '1.4.4-1'})
+ok: [192.168.1.31] => (item={'name': 'nginx=', 'version': '1.18.0-0ubuntu1'})
+
+TASK [hw23 : hw23_3 rc=0] ******************************************************
+ok: [192.168.1.31]
+
+TASK [hw23 : hw23_3 rc=2] ******************************************************
+skipping: [192.168.1.31]
+
+TASK [hw23 : testing rc] *******************************************************
+ok: [192.168.1.31] => {
+    "msg": "hw23_3 rc=0"
+}
+
+TASK [hw23 : Find out hosts ip] ************************************************
+ok: [192.168.1.31]
+
+TASK [hw23 : Check Nginx configs] **********************************************
+changed: [192.168.1.31]
+
+TASK [hw23 : Nginx test status] ************************************************
+ok: [192.168.1.31] => {
+    "msg": "Nginx Config OK because rc=0"
+}
+
+TASK [hw23 : Nginx test url] ***************************************************
+ok: [192.168.1.31]
+
+TASK [hw23 : Nginx restarted] **************************************************
+skipping: [192.168.1.31]
+
+TASK [hw23 : Print 20 strings ngnix logs] **************************************
+skipping: [192.168.1.31]
+
+TASK [hw23 : print logs] *******************************************************
+skipping: [192.168.1.31]
+
+PLAY [localhost] ***************************************************************
+
+TASK [Gathering Facts] *********************************************************
+ok: [localhost]
+
+TASK [cpfile : Creates file in localhost] **************************************
+changed: [localhost]
+
+TASK [cpfile : add date in date.txt] *******************************************
+changed: [localhost]
+
+PLAY [linux] *******************************************************************
+
+TASK [Gathering Facts] *********************************************************
+ok: [192.168.1.31]
+
+TASK [hw24 : check connection to google] ***************************************
+ok: [192.168.1.31]
+
+TASK [hw24 : Get RPM] **********************************************************
+skipping: [192.168.1.31]
+
+TASK [hw24 : Install downloaded rpm] *******************************************
+skipping: [192.168.1.31]
+
+TASK [hw24 : Add the user 'hw24' with a sh shell and '/opt/hw24' home directory] ***
+changed: [192.168.1.31] => (item={'name': 'hw24', 'groups': 'docker', 'shell': '/bin/sh', 'home': '/opt/hw24'})
+
+TASK [hw24 : write authorized keys in hosts] ***********************************
+ok: [192.168.1.31] => (item=None)
+ok: [192.168.1.31] => (item=None)
+ok: [192.168.1.31]
+
+TASK [hw24 : find out the number of users] *************************************
+changed: [192.168.1.31]
+
+TASK [hw24 : Add the users with a bash shell and '/home/user(*)' home directory] ***
+skipping: [192.168.1.31] => (item={'name': 'user1', 'groups': 'docker', 'shell': '/bin/bash', 'home': '/home/user1'}) 
+skipping: [192.168.1.31] => (item={'name': 'user2', 'groups': 'docker', 'shell': '/bin/bash', 'home': '/home/user2'}) 
+skipping: [192.168.1.31] => (item={'name': 'user3', 'groups': 'docker', 'shell': '/bin/bash', 'home': '/home/user3'}) 
+
+TASK [hw24 : Copy file with Date] **********************************************
+changed: [192.168.1.31] => (item={'src': '/tmp/update/date.txt', 'dest': '/home/vagrant/date.txt', 'owner': 'root', 'group': 'root', 'mode': '0644'})
+
+TASK [hw24 : for test hw24 task 12] ********************************************
+skipping: [192.168.1.31]
+
+TASK [hw24 : for test hw24 task 12 p2] *****************************************
+ok: [192.168.1.31] => {
+    "msg": "Good Job, Man!"
+}
+
+PLAY RECAP *********************************************************************
+192.168.1.31               : ok=25   changed=8    unreachable=0    failed=0    skipped=13   rescued=0    ignored=0   
+localhost                  : ok=3    changed=2    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+
+OK
+Ending log 2021-05-13.22:43:26
+Starting log 2021-05-13.23:02:57
+Adding key... OK
+Cleaning folders... OK
+Start Ansible... 
+
+PLAY [all] *********************************************************************
+
+TASK [Gathering Facts] *********************************************************
+ok: [192.168.1.31]
+ok: [192.168.1.32]
+
+TASK [add new node into runtime inventory] *************************************
+skipping: [192.168.1.31]
+
+PLAY [linux] *******************************************************************
+
+TASK [Gathering Facts] *********************************************************
+ok: [192.168.1.32]
+ok: [192.168.1.31]
+
+TASK [hw23 : Touch file in remote hosts] ***************************************
+changed: [192.168.1.31] => (item={'content': '', 'dest': '/opt/hw23_test_file', 'owner': 'root', 'group': 'root', 'mode': '0644'})
+changed: [192.168.1.32] => (item={'content': '', 'dest': '/opt/hw23_test_file', 'owner': 'root', 'group': 'root', 'mode': '0644'})
+
+TASK [hw23 : stat for file /opt/hw23_test_file] ********************************
+ok: [192.168.1.31]
+ok: [192.168.1.32]
+
+TASK [hw23 : Debug message] ****************************************************
+skipping: [192.168.1.31]
+skipping: [192.168.1.32]
+
+TASK [hw23 : Rename File /opt/hw23_test_file] **********************************
+changed: [192.168.1.31]
+changed: [192.168.1.32]
+
+TASK [hw23 : Create symlink] ***************************************************
+changed: [192.168.1.31] => (item={'src': '/etc/hosts', 'dest': '/opt/hw23_link', 'owner': 'root', 'group': 'root', 'mode': '0644'})
+changed: [192.168.1.32] => (item={'src': '/etc/hosts', 'dest': '/opt/hw23_link', 'owner': 'root', 'group': 'root', 'mode': '0644'})
+
+TASK [hw23 : stat for link /opt/hw23_link] *************************************
+ok: [192.168.1.31]
+ok: [192.168.1.32]
+
+TASK [hw23 : Debug message] ****************************************************
+skipping: [192.168.1.31]
+skipping: [192.168.1.32]
+
+TASK [hw23 : Rename link /opt/hw23_link] ***************************************
+changed: [192.168.1.31]
+changed: [192.168.1.32]
+
+TASK [hw23 : Set up the repository] ********************************************
+skipping: [192.168.1.32]
+ok: [192.168.1.31] => (item={'name': 'apt-transport-https', 'version': '2.0.5'})
+ok: [192.168.1.31] => (item={'name': 'ca-certificates', 'version': '20210119~20.04.1'})
+ok: [192.168.1.31] => (item={'name': 'gnupg', 'version': '2.2.19-3ubuntu2.1'})
+ok: [192.168.1.31] => (item={'name': 'curl', 'version': '7.68.0-1ubuntu2.5'})
+ok: [192.168.1.31] => (item={'name': 'lsb-release', 'version': '11.1.0ubuntu2'})
+
+TASK [hw23 : Add GPG key] ******************************************************
+skipping: [192.168.1.32] => (item={'url': 'https://download.docker.com/linux/centos/docker-ce.repo', 'dest': '/etc/yum.repos.d/docer-ce.repo'}) 
+ok: [192.168.1.31] => (item={'url': 'https://download.docker.com/linux/ubuntu/gpg', 'dest': ''})
+
+TASK [hw23 : Add repos] ********************************************************
+skipping: [192.168.1.32]
+ok: [192.168.1.31]
+
+TASK [hw23 : Add Docker repo] **************************************************
+skipping: [192.168.1.31] => (item={'url': 'https://download.docker.com/linux/ubuntu/gpg', 'dest': ''}) 
+changed: [192.168.1.32] => (item={'url': 'https://download.docker.com/linux/centos/docker-ce.repo', 'dest': '/etc/yum.repos.d/docer-ce.repo'})
+
+TASK [hw23 : Install epel] *****************************************************
+skipping: [192.168.1.31]
+changed: [192.168.1.32]
+
+TASK [hw23 : Install Docker and Nginx,  git and Pyhton] ************************
+changed: [192.168.1.32] => (item={'name': 'git-', 'version': '1.8.3.1-23.el7_8'})
+changed: [192.168.1.32] => (item={'name': 'python3-', 'version': '3.6.8-18.el7'})
+ok: [192.168.1.31] => (item={'name': 'git=', 'version': '1:2.25.1-1ubuntu3.1'})
+ok: [192.168.1.31] => (item={'name': 'python3=', 'version': '3.8.2-0ubuntu2'})
+ok: [192.168.1.31] => (item={'name': 'docker-ce=', 'version': '5:20.10.6~3-0~ubuntu-focal'})
+ok: [192.168.1.31] => (item={'name': 'docker-ce-cli=', 'version': '5:20.10.6~3-0~ubuntu-focal'})
+ok: [192.168.1.31] => (item={'name': 'containerd.io=', 'version': '1.4.4-1'})
+ok: [192.168.1.31] => (item={'name': 'nginx=', 'version': '1.18.0-0ubuntu1'})
+changed: [192.168.1.32] => (item={'name': 'docker-ce-', 'version': '20.10.6-3.el7'})
+ok: [192.168.1.32] => (item={'name': 'docker-ce-cli-', 'version': '20.10.6-3.el7'})
+ok: [192.168.1.32] => (item={'name': 'containerd.io-', 'version': '1.4.4-3.1.el7'})
+changed: [192.168.1.32] => (item={'name': 'nginx-', 'version': '1.16.1-3.el7'})
+
+TASK [hw23 : hw23_3 rc=0] ******************************************************
+ok: [192.168.1.31]
+skipping: [192.168.1.32]
+
+TASK [hw23 : hw23_3 rc=2] ******************************************************
+skipping: [192.168.1.31]
+ok: [192.168.1.32]
+
+TASK [hw23 : testing rc] *******************************************************
+ok: [192.168.1.31] => {
+    "msg": "hw23_3 rc=0"
+}
+ok: [192.168.1.32] => {
+    "msg": "hw23_3 rc=2"
+}
+
+TASK [hw23 : Find out hosts ip] ************************************************
+ok: [192.168.1.31]
+ok: [192.168.1.32]
+
+TASK [hw23 : Check Nginx configs] **********************************************
+changed: [192.168.1.32]
+changed: [192.168.1.31]
+
+TASK [hw23 : Nginx test status] ************************************************
+ok: [192.168.1.31] => {
+    "msg": "Nginx Config OK because rc=0"
+}
+ok: [192.168.1.32] => {
+    "msg": "Nginx Config OK because rc=0"
+}
+
+TASK [hw23 : Nginx test url] ***************************************************
+ok: [192.168.1.31]
+fatal: [192.168.1.32]: FAILED! => {"censored": "the output has been hidden due to the fact that 'no_log: true' was specified for this result"}
+...ignoring
+
+TASK [hw23 : Nginx restarted] **************************************************
+skipping: [192.168.1.31]
+fatal: [192.168.1.32]: FAILED! => {"msg": "The task includes an option with an undefined variable. The error was: 'nginx' is undefined\n\nThe error appears to be in '/tmp/update/from_hw23/roles/hw23/tasks/main.yml': line 105, column 6, but may\nbe elsewhere in the file depending on the exact syntax problem.\n\nThe offending line appears to be:\n\n\n   - name: \"Nginx restarted\"\n     ^ here\n"}
+
+TASK [hw23 : Print 20 strings ngnix logs] **************************************
+skipping: [192.168.1.31]
+
+TASK [hw23 : print logs] *******************************************************
+skipping: [192.168.1.31]
+
+RUNNING HANDLER [hw23 : Docker started] ****************************************
+
+RUNNING HANDLER [hw23 : nginx started] *****************************************
+
+RUNNING HANDLER [hw23 : Docker restarted] **************************************
+
+RUNNING HANDLER [hw23 : nginx restarted] ***************************************
+
+PLAY [localhost] ***************************************************************
+
+TASK [Gathering Facts] *********************************************************
+ok: [localhost]
+
+TASK [cpfile : Creates file in localhost] **************************************
+changed: [localhost]
+
+TASK [cpfile : add date in date.txt] *******************************************
+changed: [localhost]
+
+PLAY [linux] *******************************************************************
+
+TASK [Gathering Facts] *********************************************************
+ok: [192.168.1.31]
+
+TASK [hw24 : check connection to google] ***************************************
+ok: [192.168.1.31]
+
+TASK [hw24 : Get RPM] **********************************************************
+skipping: [192.168.1.31]
+
+TASK [hw24 : Install downloaded rpm] *******************************************
+skipping: [192.168.1.31]
+
+TASK [hw24 : Add the user 'hw24' with a sh shell and '/opt/hw24' home directory] ***
+changed: [192.168.1.31] => (item={'name': 'hw24', 'groups': 'docker', 'shell': '/bin/sh', 'home': '/opt/hw24'})
+
+TASK [hw24 : write authorized keys in hosts] ***********************************
+ok: [192.168.1.31] => (item=None)
+ok: [192.168.1.31] => (item=None)
+ok: [192.168.1.31]
+
+TASK [hw24 : find out the number of users] *************************************
+changed: [192.168.1.31]
+
+TASK [hw24 : Add the users with a bash shell and '/home/user(*)' home directory] ***
+skipping: [192.168.1.31] => (item={'name': 'user1', 'groups': 'docker', 'shell': '/bin/bash', 'home': '/home/user1'}) 
+skipping: [192.168.1.31] => (item={'name': 'user2', 'groups': 'docker', 'shell': '/bin/bash', 'home': '/home/user2'}) 
+skipping: [192.168.1.31] => (item={'name': 'user3', 'groups': 'docker', 'shell': '/bin/bash', 'home': '/home/user3'}) 
+
+TASK [hw24 : Copy file with Date] **********************************************
+changed: [192.168.1.31] => (item={'src': '/tmp/update/date.txt', 'dest': '/home/vagrant/date.txt', 'owner': 'root', 'group': 'root', 'mode': '0644'})
+
+TASK [hw24 : for test hw24 task 12] ********************************************
+skipping: [192.168.1.31]
+
+TASK [hw24 : for test hw24 task 12 p2] *****************************************
+ok: [192.168.1.31] => {
+    "msg": "Good Job, Man!"
+}
+
+PLAY RECAP *********************************************************************
+192.168.1.31               : ok=25   changed=8    unreachable=0    failed=0    skipped=13   rescued=0    ignored=0   
+192.168.1.32               : ok=17   changed=8    unreachable=0    failed=1    skipped=6    rescued=0    ignored=1   
+localhost                  : ok=3    changed=2    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+
+OK
+Ending log 2021-05-13.23:02:57

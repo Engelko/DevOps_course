@@ -1,0 +1,94 @@
+# check inet for hosts
+- name: check connection to google
+  uri:
+    url: "https://google.com"
+  any_errors_fatal: true
+
+# Install packages with checksum
+- name: Downloaded rpm pkgs
+  block:
+   - name: Get RPM
+     get_url:
+       url: 	http://mirror.centos.org/centos/7/os/x86_64/Packages/fipscheck-1.4.1-6.el7.x86_64.rpm
+       checksum: md5:0e7643bf1b1f7c9d49f029c05f2ea02c
+       dest: /tmp/mysql.rpm
+   - name: Install downloaded rpm
+     yum:
+      name: /tmp/mysql.rpm
+      state: present
+  when: ansible_facts['os_family'] == "RedHat"  
+
+# Create User hw24 with password in vault.yml
+- name: Add the user 'hw24' with a sh shell and '/opt/hw24' home directory
+  ansible.builtin.user:
+   name: "{{ item.name }}"
+   shell: "{{ item.shell }}"
+   home: "{{ item.home }}"
+   groups: "{{ item.groups }}"
+   password: "{{ password | password_hash('sha512') }}"
+   state: present
+  loop: "{{ users_hw24 }}"
+  become: true
+  tags: add_user
+  # no_log: True
+
+# Reset connection  for hw24
+- name: reset ssh connection to allow user changes to affect 'current login user'
+  meta: reset_connection 
+
+# Add pub_key in authorized keys in hosts
+- name: write authorized keys in hosts
+  authorized_key:
+    user: "{{ user_ssh }}"
+    state: present
+    key: "{{ item }}"
+  with_file:
+    - pub_key_1
+    - pub_key_2
+  become: true
+  no_log: True
+
+# UPGRATE ALL PACKAGES
+- name: Upgrade all packages
+  block: 
+# Update and Upgrade all apt packages on Ubuntu servers
+   - name: Update and Upgrade Ubuntu hosts
+     block:
+      - name: Update apt-get repo and cache
+        apt: update_cache=yes force_apt_get=yes cache_valid_time=3600
+      - name: Upgrade all apt packages
+        apt: upgrade=dist force_apt_get=yes
+     when: ansible_facts['os_family'] == "Debian"
+# Update and Upgrade all yum packages on CentOS servers
+   - name: Update and Upgrade CentOS hosts
+     block:
+      - name: Update yum repo and cache
+        yum: update_cache=yes 
+      - name: Upgrade all yum packages
+        yum: name=* state=latest
+     when: ansible_facts['os_family'] == "RedHat"    
+  become: true 
+  tags: never
+
+# Run add users but not more than three
+- name: Run add users 
+  import_tasks: addusers.yml
+  become: true
+
+# Copy file with date in hosts
+- name: copy file  in hosts
+  import_tasks: addfiledate.yml
+  become: true
+
+# skipped for one host
+- name: for test hw24 task 12
+  debug:
+     msg: "Good Job!"
+  when: inventory_hostname != '192.168.1.31'
+
+# skipped for group host
+- name: for test hw24 task 12 p2
+  debug:
+     msg: "Good Job, Man!"
+  when: "'centos' not in group_names"
+

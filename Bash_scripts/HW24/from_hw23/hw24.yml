@@ -1,0 +1,29 @@
+#tasks hw26
+- hosts:  all
+  pre_tasks:
+   - name: add new node into runtime inventory 
+     add_host: 
+      name: "{{ new_host }}"
+      groups: "{{ new_group }}"
+      ansible_host: "{{ new_ipadd }}"
+     when: new_host is defined and new_ipadd is defined
+
+- hosts: linux
+  tags: hw23
+  roles:
+   - hw23
+  #    vars: 
+  #      fakepam: abc
+  #  - role: hw23
+  #    vars: 
+  #       fakepam: cba
+ 
+- hosts: localhost
+  tags: cpfile
+  roles:
+   - cpfile
+
+- hosts: linux
+  tags: hw24
+  roles:
+   - hw24
