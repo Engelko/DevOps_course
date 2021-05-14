@@ -9,7 +9,7 @@
 
 ## 5.	Play with ./meta. In previous HW you have 2 roles. Make it obligatory to run one of the roles prior to another one.
 
-## 6.	Use host template to run ansible playbook( do not put it to script)
+
 
 ## 7.	Update your previous playbook. Add 3 additional users to be created(all without sudo). Use loop. Run user creation only if the amount of users does not exceed 3. 
 
