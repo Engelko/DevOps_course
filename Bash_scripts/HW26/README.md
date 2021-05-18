@@ -29,3 +29,4 @@
 ![hw26t4p1](https://github.com/Engelko/DevOps_course/blob/HW26/Bash_scripts/HW26/hw26t4p1.png)
 ![hw26t4p2](https://github.com/Engelko/DevOps_course/blob/HW26/Bash_scripts/HW26/hw26t4p2.png)
 ![hw24t5](https://github.com/Engelko/DevOps_course/blob/HW26/Bash_scripts/HW26/hw26t5.png)
+![hw26chef](https://github.com/Engelko/DevOps_course/blob/HW26/Bash_scripts/HW26/hw26chef.png)
