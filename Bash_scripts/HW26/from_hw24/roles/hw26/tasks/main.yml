@@ -1,0 +1,30 @@
+# Sleep 20 in hosts
+- name: sleep in hosts
+  ansible.builtin.shell: sleep 20
+
+
+- name: Sleep for 20
+  wait_for:
+    timeout: 20
+  register: wait
+
+- name: debug
+  debug:
+     msg: "ALL good, failed={{ wait.failed }}"
+  when:  "wait.failed  == false"
+
+- fail: msg="Bailing out. this play requires 'var_hw26'"
+  when: var_hw26 is not defined
+
+- name: check veriable var_hw26
+  assert:
+    that:
+      - var_hw26 is defined
+    fail_msg: "'var_hw26' is not defined"
+    success_msg: "var_hw26 is defined {{var_hw26}}"
+  ignore_errors: yes
+
+- name: Simulate long running op (15 sec), wait for up to 45 sec, poll every 5 sec
+  ansible.builtin.command: /bin/sleep 15
+  async: 45
+  poll: 0
