@@ -27,6 +27,7 @@
   with_items:
    - "{{ path_files }}"  
   when: ansible_facts['os_family'] == "Debian"
+  ignore_errors: yes
  
   #Install Curl on CentOS
 - name: "Install a .rpm package"
