@@ -4,6 +4,7 @@ packages:
  - { name: "gnupg", version: "2.2.19-3ubuntu2.1" }
  - { name: "curl", version: "7.68.0-1ubuntu2.5" }
  - { name: "lsb-release", version: "11.1.0ubuntu2" } 
+ - { name: "bind-utils", version: "" }
 pack_git_pyt:
  - { name: "git=", version: "1:2.25.1-1ubuntu3.1" }
  - { name: "python3=", version: "3.8.2-0ubuntu2" }
