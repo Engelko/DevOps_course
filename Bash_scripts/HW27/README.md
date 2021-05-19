@@ -18,3 +18,14 @@
 
 ### optional:
 ### Do all above using DSL
+
+
+![hw27t1](https://github.com/Engelko/DevOps_course/blob/main/hw27t1.png)
+![hw27t2](https://github.com/Engelko/DevOps_course/blob/main/hw27t2.png)
+![hw27t3p1](https://github.com/Engelko/DevOps_course/blob/main/hw27t3p1.png)
+![hw27t3p2](https://github.com/Engelko/DevOps_course/blob/main/hw27t3p2.png)
+![hw27t4p1](https://github.com/Engelko/DevOps_course/blob/main/hw27t4p1.png)
+![hw27t4p2](https://github.com/Engelko/DevOps_course/blob/main/hw27t4p2.png)
+![hw27t5](https://github.com/Engelko/DevOps_course/blob/main/hw27t5.png)
+![hw27t6p1](https://github.com/Engelko/DevOps_course/blob/main/hw27t6p1.png)
+![hw27t6p2](https://github.com/Engelko/DevOps_course/blob/main/hw27t6p2.png)
