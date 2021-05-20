@@ -1,0 +1,15 @@
+pipeline {
+    agent {
+        label 'master'
+    }
+    stages {
+        stage ("docker build image") {
+            steps {
+                echo "=========docker build image========"
+                dir ('Bash_scripts/HW27') {
+                    sh 'docker build -t hw27testing .'
+                }
+            }
+        }
+    }
+}

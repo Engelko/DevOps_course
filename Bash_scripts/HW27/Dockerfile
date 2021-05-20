@@ -81,5 +81,6 @@ RUN apt-get update && apt-get install -y apt-transport-https \
     /var/tmp/* \
     /usr/share/man \
     /usr/share/doc \
-    /usr/share/doc-base
+    /usr/share/doc-base	
+RUN groupadd docker && usermod -aG docker jenkins && gpasswd -a jenkins docker
 USER jenkins
