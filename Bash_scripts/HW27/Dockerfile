@@ -60,6 +60,8 @@ RUN apt-get update && apt-get install -y apt-transport-https \
 	&& apt-get -y install docker-ce-cli \
   && apt-get install rsync -y \
   && apt-get install shellcheck \
+  && apt-get install npm \
+  && sudo npm install -g dockerfile_lint \
 	######################## install go & kubeseal
 	# && wget https://dl.google.com/go/go1.12.5.linux-amd64.tar.gz -P /tmp/ > /dev/null \
 	# && tar -xvf /tmp/go1.12.5.linux-amd64.tar.gz \
@@ -70,8 +72,6 @@ RUN apt-get update && apt-get install -y apt-transport-https \
 	# && wget https://github.com/bitnami-labs/sealed-secrets/releases/download/${KUBESEAL_VERSION}/kubeseal-${GOOS}-${GOARCH} -P /tmp/ > /dev/null \
 	# && install -m 755 /tmp/kubeseal-$GOOS-$GOARCH /usr/local/bin/kubeseal \
 	########################
-	#&& gpasswd -a jenkins docker \
-  #&& newgrp docker \
 	&& echo "    StrictHostKeyChecking no" >> /etc/ssh/ssh_config \
 	&& echo "    UserKnownHostsFile=/dev/null" >> /etc/ssh/ssh_config \
   && apt-get purge --auto-remove -yqq \
