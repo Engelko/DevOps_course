@@ -29,3 +29,7 @@
 ![hw27t5](https://github.com/Engelko/DevOps_course/blob/HW27/Bash_scripts/HW27/hw27t5.png)
 ![hw27t6p1](https://github.com/Engelko/DevOps_course/blob/HW27/Bash_scripts/HW27/hw27t6p1.png)
 ![hw27t6p2](https://github.com/Engelko/DevOps_course/blob/HW27/Bash_scripts/HW27/hw27t6p2.png)
+![hw27t1docker](https://github.com/Engelko/DevOps_course/blob/HW27/Bash_scripts/HW27/hw27t1docker.png)
+![hw27t1docker2](https://github.com/Engelko/DevOps_course/blob/HW27/Bash_scripts/HW27/hw27t1docker2.png)
+![hw27t1docker3](https://github.com/Engelko/DevOps_course/blob/HW27/Bash_scripts/HW27/hw27t1docker3.png)
+![hw27t1docker4](https://github.com/Engelko/DevOps_course/blob/HW27/Bash_scripts/HW27/hw27t1docker4.png)
