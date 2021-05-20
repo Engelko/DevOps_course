@@ -59,6 +59,7 @@ RUN apt-get update && apt-get install -y apt-transport-https \
 	&& git config --global core.sshCommand 'ssh -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no' \
 	&& apt-get -y install docker-ce-cli \
   && apt-get install rsync -y \
+  && apt-get install shellcheck \
 	######################## install go & kubeseal
 	# && wget https://dl.google.com/go/go1.12.5.linux-amd64.tar.gz -P /tmp/ > /dev/null \
 	# && tar -xvf /tmp/go1.12.5.linux-amd64.tar.gz \
