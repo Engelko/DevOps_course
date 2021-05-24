@@ -36,3 +36,4 @@
 ![hw27t1docker5](https://github.com/Engelko/DevOps_course/blob/HW27/Bash_scripts/HW27/hw27docker%20socket2.png)
 ![hw27t1docker6](https://github.com/Engelko/DevOps_course/blob/HW27/Bash_scripts/HW27/hw27dockersocket.png)
 ![hw27t1docker7](https://github.com/Engelko/DevOps_course/blob/HW27/Bash_scripts/HW27/hw27docker2.png)
+![hw27t1docker8](https://github.com/Engelko/DevOps_course/blob/HW27/Bash_scripts/HW27/hw27dockercont.png)
