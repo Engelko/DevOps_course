@@ -16,11 +16,11 @@ RUN /usr/local/bin/install-plugins.sh ssh-slaves \
 	github \
 	mask-passwords \
 	kubernetes \
-  docker-plugin \
-  slack \
-  docker-workflow \
+    docker-plugin \
+    slack \
+    docker-workflow \
 	blueocean \
-  copyartifact \
+    copyartifact \
 	stashNotifier \
 	show-build-parameters \
 	credentials \
@@ -28,7 +28,7 @@ RUN /usr/local/bin/install-plugins.sh ssh-slaves \
 	command-launcher \
 	external-monitor-job \
 	ssh-agent \
-  declarative-pipeline-migration-assistant \
+    declarative-pipeline-migration-assistant \
 	pipeline-stage-view
 USER root
 RUN apt-get update && apt-get install -y apt-transport-https \
@@ -44,7 +44,7 @@ RUN apt-get update && apt-get install -y apt-transport-https \
 	&& touch /etc/apt/sources.list.d/kubernetes.list \
 	&& echo "deb http://apt.kubernetes.io/ kubernetes-xenial main" | tee -a /etc/apt/sources.list.d/kubernetes.list \
 	&& curl -fsSL https://download.docker.com/linux/$(. /etc/os-release; echo "$ID")/gpg > /tmp/dkey; apt-key add /tmp/dkey \
-  && add-apt-repository \
+    && add-apt-repository \
     "deb [arch=amd64] https://download.docker.com/linux/$(. /etc/os-release; echo "$ID") \
     $(lsb_release -cs) \
     stable" \
@@ -58,10 +58,10 @@ RUN apt-get update && apt-get install -y apt-transport-https \
 		cryptography \
 	&& git config --global core.sshCommand 'ssh -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no' \
 	&& apt-get -y install docker-ce-cli \
-  && apt-get install rsync -y \
-  && apt-get install shellcheck \
-  && apt-get install npm \
-  && sudo npm install -g dockerfile_lint \
+   && apt-get install rsync -y \
+   && apt-get install shellcheck \
+   && apt-get install npm -y \
+   &&  npm install -g dockerfile_lint -y \
 	######################## install go & kubeseal
 	# && wget https://dl.google.com/go/go1.12.5.linux-amd64.tar.gz -P /tmp/ > /dev/null \
 	# && tar -xvf /tmp/go1.12.5.linux-amd64.tar.gz \
@@ -74,7 +74,7 @@ RUN apt-get update && apt-get install -y apt-transport-https \
 	########################
 	&& echo "    StrictHostKeyChecking no" >> /etc/ssh/ssh_config \
 	&& echo "    UserKnownHostsFile=/dev/null" >> /etc/ssh/ssh_config \
-  && apt-get purge --auto-remove -yqq \
+    && apt-get purge --auto-remove -yqq \
 	&& apt-get clean \
 	&& rm -rf \
     /var/lib/apt/lists/* \
