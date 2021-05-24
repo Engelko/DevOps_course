@@ -1,0 +1,44 @@
+version: '3.2'
+
+volumes:
+  jenkins-home:
+
+services:
+  docker:
+    container_name: jenkins-docker
+    image: docker:dind
+    environment:
+      - DOCKER_TLS_CERTDIR=/certs
+    privileged: true
+    networks:
+      - jenkins
+    ports:
+      - 2376:2376
+    volumes:
+      - ./jenkins-docker-certs:/certs/client
+      - ./jenkins-data:/home/jenkins_home 
+    command: --storage-driver=overlay2
+
+
+  
+  jenkins:
+    container_name: jenkins-forme
+    image: "${MY_REGISTARY}jenkins-docker"
+    privileged: true
+    build: .
+    restart: unless-stopped
+    environment:
+      - DOCKER_TLS_VERIFY=1
+      - DOCKER_CERT_PATH=/certs/client
+      - DOCKER_HOST=tcp://docker:2376
+    networks:
+      - jenkins
+    ports:
+        - 8080:8080
+        - 50000:50000
+    volumes:
+      - ./jenkins-data:/home/jenkins_home 
+      - ./jenkins-docker-certs:/certs/client:ro 
+
+networks:
+    jenkins:
