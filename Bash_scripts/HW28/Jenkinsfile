@@ -1,0 +1,28 @@
+pipeline {
+  agent any
+  stages {
+    stage('Checkout Scm') {
+      steps {
+        git(credentialsId: 'engelko', url: 'git@github.com:Engelko/DevOps_course.git')
+      }
+    }
+
+    stage('Shell script 0') {
+      steps {
+        sh '''#!/bin/bash
+cd $PATHTO
+
+SHELL_SCRIPTS=$(find . -name \'*.sh\')
+
+for var in $SHELL_SCRIPTS ; do
+shellcheck "$var"
+done
+'''
+      }
+    }
+
+  }
+  parameters {
+    string(name: 'PATHTO', defaultValue: 'Bash_scripts/HW13/', description: null)
+  }
+}
