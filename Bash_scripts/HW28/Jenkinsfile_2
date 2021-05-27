@@ -6,11 +6,7 @@ pipeline {
     }
     agent any 
     stages { 
-        stage('Cloning our Git') { 
-            steps { 
-                git 'git@github.com:Engelko/DevOps_course.git' 
-            }
-        } 
+        
         stage('Building our image') { 
             steps { 
                 script { 
