@@ -27,6 +27,5 @@ done'''
   }
   parameters {
     string(name: 'PATHTO', defaultValue: 'Bash_scripts/HW27', description: null)
-    string(name: 'VERSION', defaultValue: 'v1', description: null)
   }
 }
