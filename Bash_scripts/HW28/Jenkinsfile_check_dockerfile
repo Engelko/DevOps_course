@@ -21,6 +21,14 @@ cd Bash_scripts/HW27
 docker build -t hw28_${VERSION}_${GIT_COMMIT}_${BUILD_NUMBER} .'''
       }
     }
+    stage('Shell script 2') {
+      steps {
+        sh '''#!/bin/bash   
+echo "=========PUSH TO DOCKERHUB========"
+docker login --username ${USERDOC} --password ${PASSDOC}
+docker push engelko/devops-course:hw28_${VERSION}_${GIT_COMMIT}_${BUILD_NUMBER}'''
+      }
+    }
 
   }
   parameters {
