@@ -1,0 +1,20 @@
+pipeline {
+  agent any
+  stages {
+    stage('Shell script 0') {
+      steps {
+        sh '''#!/bin/bash
+
+DOCKERFILE=$(find "$PATHTO" -name \'Dockerfile\')
+
+for var in $DOCKERFILE ; do
+dockerfile_lint  -f "$var"
+done'''
+      }
+    }
+
+  }
+  parameters {
+    string(name: 'PATHTO', defaultValue: 'Bash_scripts/HW27', description: null)
+  }
+}
