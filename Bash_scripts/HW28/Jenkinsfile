@@ -10,19 +10,15 @@ pipeline {
     stage('Shell script 0') {
       steps {
         sh '''#!/bin/bash
-cd $PATHTO
 
+cd Bash_scripts/HW28
 SHELL_SCRIPTS=$(find . -name \'*.sh\')
 
 for var in $SHELL_SCRIPTS ; do
 shellcheck "$var"
-done
-'''
+done'''
       }
     }
 
-  }
-  parameters {
-    string(name: 'PATHTO', defaultValue: 'Bash_scripts/HW13/', description: null)
   }
 }
