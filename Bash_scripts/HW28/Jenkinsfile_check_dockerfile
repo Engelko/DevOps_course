@@ -13,8 +13,18 @@ done'''
       }
     }
 
+    stage('Shell script 1') {
+      steps {
+        sh '''#!/bin/bash   
+echo "=========docker build image========"
+cd Bash_scripts/HW27
+docker build -t hw28_${VERSION}_${GIT_COMMIT}_${BUILD_NUMBER} .'''
+      }
+    }
+
   }
   parameters {
     string(name: 'PATHTO', defaultValue: 'Bash_scripts/HW27', description: null)
+    string(name: 'VERSION', defaultValue: 'v1', description: null)
   }
 }
