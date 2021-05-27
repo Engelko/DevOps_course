@@ -23,6 +23,13 @@ docker build -t hw28_${VERSION}_${GIT_COMMIT}_${BUILD_NUMBER} .'''
     }
 
   }
+  stage('Push image') {
+    docker.withRegistry('https://hub.docker.com/repository/docker/engelko/devops-course', 'dockerhub') {
+      dockerImage.push()
+    }
+    }
+
+  }  
   parameters {
     string(name: 'PATHTO', defaultValue: 'Bash_scripts/HW27', description: null)
     string(name: 'VERSION', defaultValue: 'v1', description: null)
