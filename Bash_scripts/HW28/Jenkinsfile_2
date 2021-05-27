@@ -1,0 +1,36 @@
+pipeline { 
+    environment { 
+        registry = "engelko/devops-course" 
+        registryCredential = 'dockerhub' 
+        dockerImage = '' 
+    }
+    agent any 
+    stages { 
+        stage('Cloning our Git') { 
+            steps { 
+                git 'git@github.com:Engelko/DevOps_course.git' 
+            }
+        } 
+        stage('Building our image') { 
+            steps { 
+                script { 
+                    dockerImage = docker.build registry + ":${VERSION}_${BUILD_NUMBER}_${GIT_COMMIT}" 
+                }
+            } 
+        }
+        stage('Deploy our image') { 
+            steps { 
+                script { 
+                    docker.withRegistry( '', registryCredential ) { 
+                        dockerImage.push() 
+                    }
+                } 
+            }
+        } 
+        stage('Cleaning up') { 
+            steps { 
+                sh "docker rmi $registry:$BUILD_NUMBER" 
+            }
+        } 
+    }
+}
