@@ -1,0 +1,23 @@
+pipeline {
+  agent any
+  stages {
+    stage('Checkout Scm') {
+      steps {
+        git(credentialsId: 'engelko', url: 'git@github.com:Engelko/DevOps_course.git')
+      }
+    }
+
+    stage('Shell script 0') {
+      steps {
+        sh '''#!/bin/bash
+cd Bash_scripts/HW27/ansible
+ansible-playbook -i hosts.yml  java.yml -u ${USER}'''
+      }
+    }
+
+  }
+  parameters {
+    string(name: 'USER', defaultValue: 'vagrant', description: null)
+  }
+}
+
