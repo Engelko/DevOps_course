@@ -24,8 +24,15 @@ dockerfile_lint  -f "$var"
 done'''
       }
     }
+    
+    stage('No Converter-0') {
+      steps {
+        echo 'No converter for Builder: com.nirima.jenkins.plugins.docker.builder.DockerBuilderPublisher'
+      }
+    }
   }
   parameters {
     string(name: 'PATHTO', defaultValue: 'Bash_scripts/HW27', description: null)
+    string(name: 'VERSION', defaultValue: 'v1', description: null)
   }
 }
