@@ -14,3 +14,21 @@
 ### 6.	Create multibranch pipeline to validate your PRs with your Jenkinsfile created above
 
 ## Optional: Add docker image linting
+
+![hw28t1](https://github.com/Engelko/DevOps_course/blob/HW28/Bash_scripts/HW28/hw28t1.png)
+![hw28t1p1](https://github.com/Engelko/DevOps_course/blob/HW28/Bash_scripts/HW28/hw28t1p1.png)
+![hw28t1p2](https://github.com/Engelko/DevOps_course/blob/HW28/Bash_scripts/HW28/hw28t1p2.png)
+![hw28t1p3](https://github.com/Engelko/DevOps_course/blob/HW28/Bash_scripts/HW28/hw28t1p3.png)
+![hw28t1p4](https://github.com/Engelko/DevOps_course/blob/HW28/Bash_scripts/HW28/hw28t1p4.png)
+![hw28t2](https://github.com/Engelko/DevOps_course/blob/HW28/Bash_scripts/HW28/hw28t2.png)
+![hw28t2p1](https://github.com/Engelko/DevOps_course/blob/HW28/Bash_scripts/HW28/hw28t2p1.png)
+![hw28t2p2](https://github.com/Engelko/DevOps_course/blob/HW28/Bash_scripts/HW28/hw28t2p2.png)
+![hw28t2p3](https://github.com/Engelko/DevOps_course/blob/HW28/Bash_scripts/HW28/hw28t2p3.png)
+![hw28t3p1](https://github.com/Engelko/DevOps_course/blob/HW28/Bash_scripts/HW28/hw28t3p1.png)
+![hw28t3p2](https://github.com/Engelko/DevOps_course/blob/HW28/Bash_scripts/HW28/hw28t3p2.png)
+![hw28t4p1](https://github.com/Engelko/DevOps_course/blob/HW28/Bash_scripts/HW28/hw28t4p1.png)
+![hw28t4p2](https://github.com/Engelko/DevOps_course/blob/HW28/Bash_scripts/HW28/hw28t4p2.png)
+![hw28t5p1](https://github.com/Engelko/DevOps_course/blob/HW28/Bash_scripts/HW28/hw28t5p1.png)
+![hw28t5p2](https://github.com/Engelko/DevOps_course/blob/HW28/Bash_scripts/HW28/hw28t5p2.png)
+![hw28t6p1](https://github.com/Engelko/DevOps_course/blob/HW28/Bash_scripts/HW28/hw28t6p1.png)
+![hw28t6p2](https://github.com/Engelko/DevOps_course/blob/HW28/Bash_scripts/HW28/hw28t6p2.png)
