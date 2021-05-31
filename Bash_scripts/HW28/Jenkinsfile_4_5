@@ -1,0 +1,24 @@
+pipeline {
+  agent any
+  stages {
+    stage('Build and Push images') {
+      steps {
+        script {
+          def dockerImage = docker.build("${REPO_USR}/${NAME_IMG}", "-f ${PATHTO}/Dockerfile .")
+          docker.withRegistry('', 'dockerhub') {
+          dockerImage.push("${VERSION}_${GIT_COMMIT}_${BUILD_NUMBER}")
+          }
+          echo "Pushed Docker Image: ${REPO_USR}/${NAME_IMG}"
+        } 
+          sh "docker rmi ${REPO_USR}/${NAME_IMG}:${VERSION}_${GIT_COMMIT}_${BUILD_NUMBER} "
+        }
+    }   
+
+  }
+  parameters {
+    string(name: 'PATHTO', defaultValue: 'Bash_scripts/HW27', description: null)
+    string(name: 'VERSION', defaultValue: 'v1', description: null)
+    string(name: 'NAME_IMG', defaultValue: 'hw28', description: null)
+    string(name: 'REPO_USR', defaultValue: 'engelko', description: null)
+  }
+}
