@@ -24,15 +24,25 @@ dockerfile_lint  -f "$var"
 done'''
       }
     }
-    
-    stage('No Converter-0') {
-      steps {
-        echo 'No converter for Builder: com.nirima.jenkins.plugins.docker.builder.DockerBuilderPublisher'
+ stage('Push images') {
+  agent any
+  steps {
+    script {
+      def dockerImage = docker.build("${NAMEIM}", "-f ${PATHTO}/Dockerfile .")
+      docker.withRegistry('', 'dockerhub') {
+        dockerImage.push()
+        dockerImage.push("${VERSION}_${GIT_COMMIT}_${BUILD_NUMBER}")
       }
+      echo "Pushed Docker Image: ${NAMEIM}"
     }
+    sh "docker rmi ${NAMEIM} "
+  }
+}   
+
   }
   parameters {
     string(name: 'PATHTO', defaultValue: 'Bash_scripts/HW27', description: null)
     string(name: 'VERSION', defaultValue: 'v1', description: null)
+    string(name: 'NAMEIM', defaultValue: 'HW28', description: null)
   }
 }
