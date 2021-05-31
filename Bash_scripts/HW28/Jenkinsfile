@@ -28,7 +28,7 @@ done'''
   agent any
   steps {
     script {
-      def dockerImage = docker.build("${NAMEIM}", "-f ${PATHTO}/Dockerfile .")
+      def dockerImage = docker.build("${REPOUSR}/${NAMEIM}", "-f ${PATHTO}/Dockerfile .")
       docker.withRegistry('', 'dockerhub') {
         dockerImage.push()
         dockerImage.push("${VERSION}_${GIT_COMMIT}_${BUILD_NUMBER}")
@@ -44,5 +44,6 @@ done'''
     string(name: 'PATHTO', defaultValue: 'Bash_scripts/HW27', description: null)
     string(name: 'VERSION', defaultValue: 'v1', description: null)
     string(name: 'NAMEIM', defaultValue: 'HW28', description: null)
+    string(name: 'REPOUSR', defaultValue: 'engelko', description: null)
   }
 }
