@@ -1,5 +1,11 @@
 pipeline {
   agent any
+    parameters {
+    string(name: 'PATHTO', defaultValue: 'Bash_scripts/HW27', description: null)
+    string(name: 'VERSION', defaultValue: 'v1', description: null)
+    string(name: 'NAME_IMG', defaultValue: 'hw28', description: null)
+    string(name: 'REPO_USR', defaultValue: 'engelko', description: null)
+  }
   stages {
     stage('Build and Push images') {
       steps {
@@ -13,12 +19,5 @@ pipeline {
           sh "docker rmi ${REPO_USR}/${NAME_IMG}:${VERSION}_${GIT_COMMIT}_${BUILD_NUMBER} "
         }
     }   
-
-  }
-  parameters {
-    string(name: 'PATHTO', defaultValue: 'Bash_scripts/HW27', description: null)
-    string(name: 'VERSION', defaultValue: 'v1', description: null)
-    string(name: 'NAME_IMG', defaultValue: 'hw28', description: null)
-    string(name: 'REPO_USR', defaultValue: 'engelko', description: null)
   }
 }

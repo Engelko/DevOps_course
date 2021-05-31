@@ -1,10 +1,12 @@
 pipeline {
   agent any
+    parameters {
+    string(name: 'PATHTO', defaultValue: 'Bash_scripts/HW27', description: null)
+  }
   stages {
     stage('Shell script 0') {
       steps {
         sh '''
-        #!/bin/bash
         cd $PATHTO
         SHELL_SCRIPTS=$(find . -name \'*.sh\')
         for var in $SHELL_SCRIPTS ; do
@@ -16,7 +18,6 @@ pipeline {
     stage('Shell script 1') {
       steps {
         sh '''
-        #!/bin/bash
         DOCKERFILE=$(find "$PATHTO" -name \'Dockerfile\')
         for var in $DOCKERFILE ; do
         dockerfile_lint  -f "$var"
@@ -24,8 +25,5 @@ pipeline {
         '''
       }
     } 
-  }
-  parameters {
-    string(name: 'PATHTO', defaultValue: 'Bash_scripts/HW27', description: null)
   }
 }
