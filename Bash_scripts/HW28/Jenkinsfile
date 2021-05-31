@@ -3,8 +3,8 @@ pipeline {
     parameters {
     string(name: 'PATHTO', defaultValue: 'Bash_scripts/HW27', description: null)
     string(name: 'VERSION', defaultValue: 'v1', description: null)
-    string(name: 'NAME_IMG', defaultValue: 'hw28', description: null)
-    string(name: 'REPO_USR', defaultValue: 'engelko', description: null)
+    string(name: 'IMG_NAME', defaultValue: 'hw28', description: null)
+    string(name: 'USR_REPO', defaultValue: 'engelko', description: null)
   }
   stages {
     stage('Shell script 0') {
@@ -33,13 +33,13 @@ pipeline {
     stage('Push images') {
       steps {
         script {
-          def dockerImage = docker.build("${REPO_USR}/${NAME_IMG}", "-f ${PATHTO}/Dockerfile .")
+          def dockerImage = docker.build("${USR_REPO}/${IMG_NAME}", "-f ${PATHTO}/Dockerfile .")
           docker.withRegistry('', 'dockerhub') {
           dockerImage.push("${VERSION}_${GIT_COMMIT}_${BUILD_NUMBER}")
           }
-          echo "Pushed Docker Image: ${REPO_USR}/${NAME_IMG}"
+          echo "Pushed Docker Image: ${USR_REPO}/${IMG_NAME}"
         } 
-          sh "docker rmi ${REPO_USR}/${NAME_IMG}:${VERSION}_${GIT_COMMIT}_${BUILD_NUMBER} "
+          sh "docker rmi ${USR_REPO}/${IMG_NAME}:${VERSION}_${GIT_COMMIT}_${BUILD_NUMBER} "
         }
     }   
   }
