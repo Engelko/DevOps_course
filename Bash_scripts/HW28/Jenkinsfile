@@ -30,12 +30,11 @@ done'''
     script {
       def dockerImage = docker.build("${REPOUSR}/${NAMEIM}", "-f ${PATHTO}/Dockerfile .")
       docker.withRegistry('', 'dockerhub') {
-        dockerImage.push()
         dockerImage.push("${VERSION}_${GIT_COMMIT}_${BUILD_NUMBER}")
       }
       echo "Pushed Docker Image: ${NAMEIM}"
     }
-    sh "docker rmi ${NAMEIM} "
+    sh "docker rmi ${REPOUSR}/${NAMEIM}:${VERSION}_${GIT_COMMIT}_${BUILD_NUMBER} "
   }
 }   
 
@@ -43,7 +42,7 @@ done'''
   parameters {
     string(name: 'PATHTO', defaultValue: 'Bash_scripts/HW27', description: null)
     string(name: 'VERSION', defaultValue: 'v1', description: null)
-    string(name: 'NAMEIM', defaultValue: 'HW28', description: null)
+    string(name: 'NAMEIM', defaultValue: 'hw28', description: null)
     string(name: 'REPOUSR', defaultValue: 'engelko', description: null)
   }
 }
