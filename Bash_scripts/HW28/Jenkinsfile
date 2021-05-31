@@ -3,8 +3,7 @@ pipeline {
   stages {
     stage('Shell script 0') {
       steps {
-        sh 
-        '''
+        sh '''
         #!/bin/bash
         cd $PATHTO
         SHELL_SCRIPTS=$(find . -name \'*.sh\')
@@ -16,8 +15,7 @@ pipeline {
     }    
     stage('Shell script 1') {
       steps {
-        sh 
-        '''
+        sh '''
         #!/bin/bash
         DOCKERFILE=$(find "$PATHTO" -name \'Dockerfile\')
         for var in $DOCKERFILE ; do
