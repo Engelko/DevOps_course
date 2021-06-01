@@ -5,12 +5,12 @@ pipeline {
     string(name: 'VERSION', defaultValue: 'v1', description: null)
     string(name: 'IMG_NAME', defaultValue: 'hw28', description: null)
     string(name: 'USR_REPO', defaultValue: 'engelko', description: null)
+    string(name: 'PATH_DOCKERFILE', defaultValue: 'Bash_scripts/HW27/Dockerfile', description: null)
   }
   stages {
     stage('Shell script 0') {
       steps {
         sh '''
-        #!/bin/bash
         cd $PATHTO
         SHELL_SCRIPTS=$(find . -name \'*.sh\')
         for var in $SHELL_SCRIPTS ; do
@@ -22,18 +22,14 @@ pipeline {
     stage('Shell script 1') {
       steps {
         sh '''
-        #!/bin/bash
-        DOCKERFILE=$(find "$PATHTO" -name \'Dockerfile\')
-        for var in $DOCKERFILE ; do
-        dockerfile_lint  -f "$var"
-        done
+        dockerfile_lint  -f ${PATH_DOCKERFILE}
         '''
       }
-    }
+    } 
     stage('Push images') {
       steps {
         script {
-          def dockerImage = docker.build("${USR_REPO}/${IMG_NAME}", "-f ${PATHTO}/Dockerfile .")
+          def dockerImage = docker.build("${USR_REPO}/${IMG_NAME}", "-f ${PATH_DOCKERFILE} .")
           docker.withRegistry('', 'dockerhub') {
           dockerImage.push("${VERSION}_${GIT_COMMIT}_${BUILD_NUMBER}")
           }
