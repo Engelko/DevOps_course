@@ -4,6 +4,9 @@ on:
   push:
     branches:
     - HW29
+    paths:
+      # - some_random_path/**
+      - hosts.yml
 
 jobs:
   lintAnsible:
