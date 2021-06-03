@@ -2,7 +2,7 @@ name: deploy ansible
 
 on:
   repository_dispatch:
-    types: [. . .]
+    types: [opened, deleted]
   # push:
   #   branches:
   #   - HW29
