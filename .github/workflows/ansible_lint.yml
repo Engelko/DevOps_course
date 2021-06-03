@@ -3,10 +3,11 @@ name: deploy ansible
 on:
   repository_dispatch:
     types: opened
-  branches:
-    - HW29
-  paths:
-    - Bash_scripts/HW29/hosts.yml
+  push:
+    branches:
+      - HW29
+    paths:
+      - Bash_scripts/HW29/hosts.yml
 
 jobs:
   lintAnsible:     # Checking ansible-playbook with Lint
