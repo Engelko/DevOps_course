@@ -1,6 +1,12 @@
 name: Ansible Lint  # feel free to pick your own name
 
-on: [push, pull_request]
+on: 
+  push:
+    branches:
+    - HW29
+  pull_request:
+    branches:
+    - HW29
 
 jobs:
   build:
@@ -13,7 +19,7 @@ jobs:
 
     - name: Lint Ansible Playbook
       # replace "master" with any valid ref
-      uses: ansible/ansible-lint-action@main
+      uses: ansible/ansible-lint-action@HW29
       with:
         # [required]
         # Paths to ansible files (i.e., playbooks, tasks, handlers etc..)
@@ -23,7 +29,7 @@ jobs:
         # targets: |
         #   playbook_1.yml
         #   playbook_2.yml
-        targets: "./"
+        targets: "Bash_scripts/HW29/ansible-playbook.yml"
         # [optional]
         # Arguments to be passed to the ansible-lint
 
