@@ -16,12 +16,12 @@ jobs:
       with:
         targets: "Bash_scripts/HW29/ansible-playbook.yml"
     - uses: actions/checkout@v2
+    steps:
     - name: ansible check with ubuntu:trusty
-      # replace "master" with any valid ref
       uses: roles-ansible/check-ansible-ubuntu-trusty-action@master
       with:
-        targets: "Bash_scripts/HW29/ansible-playbook.yml"
-
+        targets: "Bash_scripts/HW29/"
+        hosts: 'localhost'
 
         # # RunAnsible:
   # #   runs-on: ubuntu-latest
