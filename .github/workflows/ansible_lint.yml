@@ -27,9 +27,12 @@ jobs:
         targets: "Bash_scripts/HW29/"
         hosts: 'localhost'
 
-        # # RunAnsible:
-  # #   runs-on: ubuntu-latest
-  #   # steps:
+
+
+#  =========== For run ansible to localhost ==================
+ # # RunAnsible:
+  #   runs-on: ubuntu-latest
+  #   steps:
   #   - name: Run playbook
   #     uses: dawidd6/action-ansible-playbook@v2
   #     with:
