@@ -1,11 +1,13 @@
 name: deploy ansible
 
 on:
-  push:
-    branches:
-    - HW29
-    paths:
-      - Bash_scripts/HW29/hosts.yml
+  repository_dispatch:
+    types: [. . .]
+  # push:
+  #   branches:
+  #   - HW29
+  #   paths:
+  #     - Bash_scripts/HW29/hosts.yml
 
 jobs:
   lintAnsible:
