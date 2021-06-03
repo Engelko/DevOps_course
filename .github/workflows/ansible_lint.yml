@@ -10,7 +10,7 @@ on:
   #     - Bash_scripts/HW29/hosts.yml
 
 jobs:
-  lintAnsible:
+  lintAnsible:     # Checking ansible-playbook with Lint
     runs-on: ubuntu-latest
     steps:
     - name: checkout repo
@@ -20,7 +20,7 @@ jobs:
       with:
         targets: "Bash_scripts/HW29/ansible-playbook.yml"
 
-  RunAnsible:
+  RunAnsible:    # Checking run ansible-playbook
     runs-on: ubuntu-latest
     needs: lintAnsible
     steps:
