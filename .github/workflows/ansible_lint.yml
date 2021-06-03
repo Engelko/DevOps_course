@@ -4,9 +4,6 @@ on:
   push:
     branches:
     - HW29
-  pull_request:
-    branches:
-    - HW29
 
 jobs:
   build:
@@ -23,8 +20,9 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v1
-    - uses: ./.github/actions/ansible
+    - uses: ./Bash_scripts/HW29
       with: 
         playbook: ansible-playbook.yml
         inventory: hosts.yml
         directory: Bash_scripts/HW29/
+
