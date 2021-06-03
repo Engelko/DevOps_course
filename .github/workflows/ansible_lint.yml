@@ -15,12 +15,14 @@ jobs:
       uses: ansible/ansible-lint-action@master
       with:
         targets: "Bash_scripts/HW29/ansible-playbook.yml"
-    - uses: actions/checkout@v2
+
   RunAnsible:
     runs-on: ubuntu-latest
+    needs: lintAnsible
     steps:
-    - name: ansible check with ubuntu:trusty
-      uses: roles-ansible/check-ansible-ubuntu-trusty-action@master
+    - uses: actions/checkout@v2
+    - name: ansible check with ubuntu:latest
+      uses: roles-ansible/check-ansible-ubuntu-latest-action@master
       with:
         targets: "Bash_scripts/HW29/"
         hosts: 'localhost'
