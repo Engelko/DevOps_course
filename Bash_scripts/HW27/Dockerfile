@@ -1,6 +1,4 @@
 FROM jenkins/jenkins:2.290
-LABEL name=Jenkins_for_me
-LABEL version=v1
 ARG HELM_VERSION=3.5.4
 ARG DEBIAN_FRONTEND=noninteractive
 ARG ANSIBLE_VERSION=2.10.7
