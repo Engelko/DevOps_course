@@ -1,8 +1,9 @@
 name: deploy ansible
 
 on:
-  repository_dispatch:
-    types: opened
+  workflow_dispatch:
+  # repository_dispatch:
+  #   types: opened
   push:
     branches:
       - HW29
