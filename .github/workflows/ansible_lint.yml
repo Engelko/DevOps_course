@@ -16,6 +16,8 @@ jobs:
       with:
         targets: "Bash_scripts/HW29/ansible-playbook.yml"
     - uses: actions/checkout@v2
+  RunAnsible:
+    runs-on: ubuntu-latest
     steps:
     - name: ansible check with ubuntu:trusty
       uses: roles-ansible/check-ansible-ubuntu-trusty-action@master
