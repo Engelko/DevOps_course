@@ -3,10 +3,10 @@ name: deploy ansible
 on:
   push:
     branches:
-    - main
+    - HW29
   pull_request:
     branches:
-    - main
+    - HW29
 
 jobs:
   build:
@@ -17,7 +17,7 @@ jobs:
     - name: Lint Ansible Playbook
       uses: ansible/ansible-lint-action@master
       with:
-        targets: ""
+        targets: "Bash_scripts/HW29/ansible-playbook.yml"
   # deployAnsible:
   #   needs: build
   #   runs-on: ubuntu-latest
