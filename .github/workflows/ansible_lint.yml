@@ -5,7 +5,6 @@ on:
     branches:
     - HW29
     paths:
-      # - some_random_path/**
       - Bash_scripts/HW29/hosts.yml
 
 jobs:
