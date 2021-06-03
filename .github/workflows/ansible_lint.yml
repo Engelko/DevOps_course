@@ -15,16 +15,16 @@ jobs:
       uses: ansible/ansible-lint-action@master
       with:
         targets: "Bash_scripts/HW29/ansible-playbook.yml"
-  RunAnsible:
-    runs-on: ubuntu-latest
-    steps:
+  # RunAnsible:
+  #   runs-on: ubuntu-latest
+    # steps:
     - name: Run playbook
       uses: dawidd6/action-ansible-playbook@v2
       with:
-        playbook: ansible-playbook.yml
-        directory: Bash_scripts/HW29
-        key: ${{secrets.SSH_PRIVATE_KEY}}
-        inventory: hosts.yml
+        playbook: Bash_scripts/HW29/ansible-playbook.yml
+        # directory: Bash_scripts/HW29
+        # key: ${{secrets.SSH_PRIVATE_KEY}}
+        inventory: localhost
 
 # ======For testing build docker image======
   # deployAnsible:
