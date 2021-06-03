@@ -6,7 +6,7 @@ on:
     - HW29
 
 jobs:
-  build:
+  lintAnsible:
     runs-on: ubuntu-latest
     steps:
     - name: checkout repo
@@ -15,13 +15,25 @@ jobs:
       uses: ansible/ansible-lint-action@master
       with:
         targets: "Bash_scripts/HW29/ansible-playbook.yml"
-  deployAnsible:
-    needs: build
+  RunAnsible:
     runs-on: ubuntu-latest
     steps:
-    - uses: actions/checkout@v2
-    - uses: ./Bash_scripts/HW29
-      with: 
+    - name: Run playbook
+      uses: dawidd6/action-ansible-playbook@v2
+      with:
         playbook: ansible-playbook.yml
+        directory: Bash_scripts/HW29
+        key: ${{secrets.SSH_PRIVATE_KEY}}
         inventory: hosts.yml
+
+# ======For testing build docker image======
+  # deployAnsible:
+  #   needs: build
+  #   runs-on: ubuntu-latest
+  #   steps:
+  #   - uses: actions/checkout@v2
+  #   - uses: ./Bash_scripts/HW29
+  #     with: 
+  #       playbook: ansible-playbook.yml
+  #       inventory: hosts.yml
 
