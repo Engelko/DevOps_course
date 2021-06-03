@@ -18,12 +18,13 @@ jobs:
       uses: ansible/ansible-lint-action@master
       with:
         targets: "Bash_scripts/HW29/ansible-playbook.yml"
-  # deployAnsible:
-  #   needs: build
-  #   runs-on: ubuntu-latest
-  #   steps:
-  #   - uses: actions/checkout@v1
-  #   - uses: ./.github/actions/ansible
-  #     with: 
-  #       playbook: playbook.yml
-  #       inventory: localhost
+  deployAnsible:
+    needs: build
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v1
+    - uses: ./.github/actions/ansible
+      with: 
+        playbook: ansible-playbook.yml
+        inventory: hosts.yml
+        directory: Bash_scripts/HW29/
