@@ -6,7 +6,7 @@ on:
     - HW29
     paths:
       # - some_random_path/**
-      - hosts.yml
+      - Bash_scripts/HW29/hosts.yml
 
 jobs:
   lintAnsible:
