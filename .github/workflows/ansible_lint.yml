@@ -1,0 +1,59 @@
+name: deploy ansible
+
+on:
+  workflow_dispatch:
+  repository_dispatch:
+    types: opened
+  push:
+    branches:
+      - HW29
+    paths:
+      - Bash_scripts/HW29/hosts.yml
+
+jobs:
+  lintAnsible:     # Checking ansible-playbook with Lint
+    runs-on: ubuntu-latest
+    steps:
+    - name: checkout repo
+      uses: actions/checkout@v2
+    - name: Lint Ansible Playbook
+      uses: ansible/ansible-lint-action@master
+      with:
+        targets: "Bash_scripts/HW29/ansible-playbook.yml"
+
+  RunAnsible:    # Checking run ansible-playbook
+    runs-on: ubuntu-latest
+    needs: lintAnsible
+    steps:
+    - uses: actions/checkout@v2
+    - name: ansible check with ubuntu:latest
+      uses: roles-ansible/check-ansible-ubuntu-latest-action@master
+      with:
+        targets: "Bash_scripts/HW29/"
+        hosts: 'localhost'
+
+
+
+#  =========== For run ansible to localhost ==================
+ # # RunAnsible:
+  #   runs-on: ubuntu-latest
+  #   steps:
+  #   - name: Run playbook
+  #     uses: dawidd6/action-ansible-playbook@v2
+  #     with:
+  #       playbook: Bash_scripts/HW29/ansible-playbook.yml
+  #       # directory: Bash_scripts/HW29
+  #       # key: ${{secrets.SSH_PRIVATE_KEY}}
+  #       inventory: localhost
+
+# ======For testing build docker image======
+  # deployAnsible:
+  #   needs: build
+  #   runs-on: ubuntu-latest
+  #   steps:
+  #   - uses: actions/checkout@v2
+  #   - uses: ./Bash_scripts/HW29
+  #     with: 
+  #       playbook: ansible-playbook.yml
+  #       inventory: hosts.yml
+
