@@ -1,0 +1,7 @@
+---
+# tasks hw24
+- hosts: ubuntu
+  tags: hw31
+  roles:
+   - hw31
+  become: yes
