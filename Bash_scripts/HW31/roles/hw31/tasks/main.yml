@@ -6,11 +6,11 @@
     state: present
     update_cache: yes
 
-# # Delete default Page in nginx
-# - name: Clean artifact path
-#   file:
-#     state: absent
-#     path: "{{ default_page }}"
+# Delete default Page in nginx
+- name: Clean artifact path
+  file:
+    state: absent
+    path: "{{ default_page }}"
 
 # # Add group and user nginx
 # - name: add group and user nginx
@@ -24,23 +24,31 @@
 #         group: nginx
 #         shell: /bin/bash
 
-# Create directory for two pages
-- name: сreate directory
-  file:
-    path: "{{ item.path }}"
-    mode: "{{ item.mode }}"
-    owner: "{{ item.owner }}"
-    group: "{{ item.group }}"
-    state: directory
-  loop: "{{ new_pages }}"
+# # Create directory for two pages
+# - name: сreate directory
+#   file:
+#     path: "{{ item.path }}"
+#     mode: "{{ item.mode }}"
+#     owner: "{{ item.owner }}"
+#     group: "{{ item.group }}"
+#     state: directory
+#   loop: "{{ new_pages }}"
 
-# Add config nginx
-- name: Add base NGINX configuration file
-  copy:
-    dest: "{{ item.dest }}"
+# # Add config nginx
+# - name: Add base NGINX configuration file
+#   copy:
+#     dest: "{{ item.dest }}"
+#     src: "{{ item.src }}"
+#     owner: "{{ item.owner }}"
+#     group: "{{ item.group }}"
+#     mode: "{{ item.mode }}"
+#   loop: "{{ ngnix_files }}"
+#   notify: Reload NGINX
+
+- name: Add NGINX virtualhost config
+  template:
     src: "{{ item.src }}"
-    owner: "{{ item.owner }}"
-    group: "{{ item.group }}"
-    mode: "{{ item.mode }}"
+    dest: "{{ item.dest }}"
   loop: "{{ ngnix_files }}"
-  notify: Reload NGINX
+  notify:
+    - Reload NGINX

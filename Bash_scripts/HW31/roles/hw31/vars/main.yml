@@ -2,10 +2,10 @@
 webserver_packages:
   - nginx
 ngnix_files:
-  - { src: 'etc/nginx/nginx.conf', dest: '/etc/nginx/nginx.conf', owner: "root", group: "root",  mode: "0644"  }
-  - { src: 'data/www/page1/index.html', dest: '/data/www/page1/index.html', owner: "root", group: "root",  mode: "0644"  }
-  - { src: 'data/www/page2/index.html', dest: '/data/www/page2/index.html', owner: "root", group: "root",  mode: "0644"  }
-# default_page: /var/www/html/index.nginx-debian.html
-new_pages:
-  - { path: '/data/www/page1', owner: "root", group: "root", mode: "0744" }
-  - { path: '/data/www/page2', owner: "root", group: "root", mode: "0744" }
+  - { src: 'templates/hw31', dest: '/etc/nginx/sites-enabled' }
+  - { src: 'templates/page1.html', dest: '/var/www/page1' }
+  - { src: 'templates/page2.html', dest: '/var/www/page2' }
+default_page: /var/www/html/index.nginx-debian.html
+# new_pages:
+#   - { path: '/var/www/page1', owner: "root", group: "root", mode: "0744" }
+#   - { path: '/var/www/page2', owner: "root", group: "root", mode: "0744" }
