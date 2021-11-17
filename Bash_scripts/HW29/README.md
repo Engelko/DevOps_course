@@ -13,9 +13,9 @@
 ## Optional
 ### Create an action to trigger another action
 
-![hw29t1](https://github.com/Engelko/DevOps_course/blob/HW29/Bash_scripts/HW29/hw29t1.png)
-![hw29t2](https://github.com/Engelko/DevOps_course/blob/HW29/Bash_scripts/HW29/hw29t2.png)
-![hw29t2p1](https://github.com/Engelko/DevOps_course/blob/HW29/Bash_scripts/HW29/hw29t2p1.png)
-![hw29t3](https://github.com/Engelko/DevOps_course/blob/HW29/Bash_scripts/HW29/hw29t3.png)
-![hw29t4](https://github.com/Engelko/DevOps_course/blob/HW29/Bash_scripts/HW29/hw29t4.png)
-![hw29t5](https://github.com/Engelko/DevOps_course/blob/HW29/Bash_scripts/HW29/hw29t5.png)
+![hw29t1](https://github.com/Engelko/DevOps_course/blob/main/Bash_scripts/HW29/hw29t1.png)
+![hw29t2](https://github.com/Engelko/DevOps_course/blob/main/Bash_scripts/HW29/hw29t2.png)
+![hw29t2p1](https://github.com/Engelko/DevOps_course/blob/main/Bash_scripts/HW29/hw29t2p1.png)
+![hw29t3](https://github.com/Engelko/DevOps_course/blob/main/Bash_scripts/HW29/hw29t3.png)
+![hw29t4](https://github.com/Engelko/DevOps_course/blob/main/Bash_scripts/HW29/hw29t4.png)
+![hw29t5](https://github.com/Engelko/DevOps_course/blob/main/Bash_scripts/HW29/hw29t5.png)
